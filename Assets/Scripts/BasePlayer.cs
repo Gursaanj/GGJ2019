@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider))]
 public class BasePlayer : MonoBehaviour {
-    public float _speed;
-    public float _health = 100;
+    [SerializeField]
+    protected float _speed;
+    [SerializeField]
+    RectTransform healthBar;
+
+    [SerializeField]
+    protected float _health = 100;
+    private float _maxHealth;
+
     private bool _MeleeCooldown = false;
     public float _meleeCooldownTime = 5.0f;
     private bool _RangeCooldown = false;
@@ -16,33 +25,31 @@ public class BasePlayer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        _maxHealth = _health;
         playerRigidbody = GetComponent<Rigidbody2D>();
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        //Vector2 amountToMove;
-    
+	void FixedUpdate () {
         Vector3 direction = InputManager.MainInput(); //Get input
-        Move(direction);
-    
-        if (Input.GetMouseButtonDown(0))
-        {
-            Shoot();
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            Melee();
-        }
+        Move();
+        Shoot();
+        Melee();
     }
     public void ReduceHealth(float damage)
     {
-        _health -= damage;
+        _health = Mathf.Max(0, _health - damage);
+        updateHealthbar();
         if (_health <= 0)
         {
             onDeath();
         }
+    }
+
+    void updateHealthbar()
+    {
+        healthBar.transform.localScale = new Vector3(_health / _maxHealth, 1, 1);
     }
 
     private void onDeath()
@@ -50,18 +57,25 @@ public class BasePlayer : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    private void Shoot()
+    protected virtual void Shoot()
     {
-      // todo Shoot
+        if (Input.GetMouseButtonDown(0))
+        {
+            //TODO - Shoot function
+        }
     }
 
-    private void Melee()
+    protected virtual void Melee()
     {
-       // todo melee
+        if (Input.GetMouseButtonDown(1))
+        {
+            //TODO Melee function
+        }
     }
 
-    private void Move(Vector3 direction)
+    protected virtual void Move()
     {
+        Vector3 direction = InputManager.MainInput();
         playerRigidbody.velocity = (Vector3.Normalize(direction) * _speed);
     }
 }
