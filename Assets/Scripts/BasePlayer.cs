@@ -73,7 +73,7 @@ public class BasePlayer : MonoBehaviour {
         healthBar.transform.localScale = new Vector3(_health / _maxHealth, 1, 1);
     }
 
-    private void onDeath()
+    protected virtual void onDeath()
     {
         Destroy(gameObject);
     }
