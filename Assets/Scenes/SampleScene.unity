@@ -624,7 +624,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 100
   m_LinearDrag: 0
-  m_AngularDrag: 0.5
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 1
@@ -767,6 +767,11 @@ Prefab:
     - target: {fileID: 212667676552458350, guid: 922352a8f817f41c79450957cf510323,
         type: 2}
       propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114054190530392908, guid: 922352a8f817f41c79450957cf510323,
+        type: 2}
+      propertyPath: _meleeCooldownTime
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -14,14 +14,28 @@ public class BasePlayer : MonoBehaviour {
     protected float _health = 100;
     private float _maxHealth;
 
-    private bool _MeleeCooldown = false;
-    public float _meleeCooldownTime = 5.0f;
-    private bool _RangeCooldown = false;
-    public float _RangeCooldownTime = 5.0f;
-    private bool _DodgeCooldown = false;
-    public float _DodgeCooldownTime = 5.0f;
-    private Rigidbody2D  playerRigidbody;
+    [Header("Cool Down")]
+    [SerializeField]
+    float _meleeCooldownTime = 5.0f;
+    [SerializeField]
+    float _RangeCooldownTime = 5.0f;
+    [SerializeField]
+    float _DodgeCooldownTime = 5.0f;
 
+    float meleeCurrentCoolDownTime;
+    float rangeCurrentCoolDownTime;
+    float dodgeCurrentCoolDownTime;
+
+    [Header("Damage")]
+    [SerializeField]
+    protected float _meleeDamage = 10;
+
+    protected bool _isMeleeOnCoolDown = false;
+    protected bool _isRangeOnCoolDown = false;
+    protected bool _isDodgeOnCoolDown = false;
+
+
+    private Rigidbody2D  playerRigidbody;
 
     // Use this for initialization
     void Start () {
@@ -30,12 +44,19 @@ public class BasePlayer : MonoBehaviour {
         playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
 	
-	// Update is called once per frame
-	void FixedUpdate () {
-        Vector3 direction = InputManager.MainInput(); //Get input
+    void setupCoolDownTime()
+    {
+        meleeCurrentCoolDownTime = _meleeCooldownTime;
+        rangeCurrentCoolDownTime = _RangeCooldownTime;
+        dodgeCurrentCoolDownTime = _DodgeCooldownTime;
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
         Move();
         Shoot();
         Melee();
+        CoolDown();
     }
     public void ReduceHealth(float damage)
     {
@@ -77,5 +98,38 @@ public class BasePlayer : MonoBehaviour {
     {
         Vector3 direction = InputManager.MainInput();
         playerRigidbody.velocity = (Vector3.Normalize(direction) * _speed);
+    }
+
+    private void CoolDown()
+    {
+        if (_isMeleeOnCoolDown)
+        {
+            meleeCurrentCoolDownTime -= Time.fixedDeltaTime;
+            if (meleeCurrentCoolDownTime <= 0)
+            {
+                _isMeleeOnCoolDown = false;
+                meleeCurrentCoolDownTime = _meleeCooldownTime;
+            }
+        }
+
+        if (_isRangeOnCoolDown)
+        {
+            rangeCurrentCoolDownTime -= Time.fixedDeltaTime;
+            if(rangeCurrentCoolDownTime <= 0)
+            {
+                _isRangeOnCoolDown = false;
+                rangeCurrentCoolDownTime = _RangeCooldownTime;
+            }
+        }
+
+        if (_isDodgeOnCoolDown)
+        {
+            dodgeCurrentCoolDownTime -= Time.fixedDeltaTime;
+            if (dodgeCurrentCoolDownTime <= 0)
+            {
+                _isDodgeOnCoolDown = false;
+                dodgeCurrentCoolDownTime = _DodgeCooldownTime;
+            }
+        }
     }
 }

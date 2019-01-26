@@ -58,4 +58,31 @@ public class CardBoardController : BasePlayer {
         onArrive = false;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        onCollide(collision.gameObject);
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        onCollide(collision.gameObject);
+    }
+
+    void onCollide(GameObject player)
+    {
+        if (player.CompareTag("Player"))
+        {
+            hitPlayer(player.GetComponent<BasePlayer>());
+        }
+    }
+
+    void hitPlayer(BasePlayer player)
+    {
+        if (!_isMeleeOnCoolDown)
+        {
+            _isMeleeOnCoolDown = true;
+            player.ReduceHealth(_meleeDamage);
+        }
+    }
+
 }
