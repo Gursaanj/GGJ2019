@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd3c8e2c-5780-40cb-9816-cf33942ba84f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2019/.idea/contentModel.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2019/.idea/indexLayout.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2019/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2019/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2019/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2019/riderModule.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ20191/.idea/contentModel.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ20191/.idea/indexLayout.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ20191/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ20191/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ20191/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ20191/riderModule.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.meta" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/BaseEnemyController.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/BaseEnemyController.cs.meta" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/CardBoardController.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/RakeAttack.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/RakeAttack.cs.meta" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/SkillAttack.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/SkillAttack.cs.meta" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/ToolshedEnemyController.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/ToolshedEnemyController.cs.meta" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ2019/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2019/.idea/contentModel.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ2019/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ2019/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardBoardController.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CardBoardController.cs.meta" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/CardBoardController.cs.meta" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +29,8 @@
       <file leaf-file-name="BasePlayer.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/BasePlayer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-879">
-              <caret line="0" column="6" lean-forward="true" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+            <state relative-caret-position="0">
+              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
               <folding>
                 <marker date="1548549728063" expanded="true" signature="6:78" ph="..." />
                 <marker date="1548549728063" expanded="true" signature="197:3331" ph="{...}" />
@@ -56,15 +58,75 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardBoardController.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/CardBoardController.cs">
+      <file leaf-file-name="CardBoardController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/CardBoardController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="45" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1548549728064" expanded="true" signature="6:78" ph="..." />
-                <marker date="1548549728064" expanded="true" signature="126:298" ph="{...}" />
-                <marker date="1548549728064" expanded="true" signature="284:296" ph="{...}" />
+                <marker date="1548555323429" expanded="true" signature="56:65" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RakeAttack.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/RakeAttack.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding>
+                <marker date="1548557465828" expanded="true" signature="37:43" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseEnemyController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/BaseEnemyController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+              <folding>
+                <marker date="1548556426914" expanded="true" signature="6:52" ph="..." />
+                <marker date="1548556426914" expanded="true" signature="54:135" ph="/// Enemy can only have one of each SkillType attack ... " />
+                <marker date="1548556426914" expanded="true" signature="193:966" ph="{...}" />
+                <marker date="1548556426914" expanded="true" signature="330:396" ph="/// Use to call skill attacks ... " />
+                <marker date="1548556426914" expanded="true" signature="445:763" ph="{...}" />
+                <marker date="1548556426914" expanded="true" signature="478:757" ph="{...}" />
+                <marker date="1548556426914" expanded="true" signature="809:830" ph="{...}" />
+                <marker date="1548556426914" expanded="true" signature="873:894" ph="{...}" />
+                <marker date="1548556426914" expanded="true" signature="943:964" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ToolshedEnemyController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/ToolshedEnemyController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+              <folding>
+                <marker date="1548557428740" expanded="true" signature="58:317" ph="{...}" />
+                <marker date="1548557428740" expanded="true" signature="193:242" ph="{...}" />
+                <marker date="1548557428740" expanded="true" signature="294:315" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SkillAttack.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/SkillAttack.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+              <folding>
+                <marker date="1548557418626" expanded="true" signature="41:97" ph="{...}" />
+                <marker date="1548557418626" expanded="true" signature="148:535" ph="{...}" />
+                <marker date="1548557418626" expanded="true" signature="324:366" ph="{...}" />
+                <marker date="1548557418626" expanded="true" signature="407:454" ph="{...}" />
+                <marker date="1548557418626" expanded="true" signature="487:533" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -77,7 +139,25 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BasePlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CardBoardController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/BaseEnemyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/RakeAttack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/CardBoardController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/ToolshedEnemyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/SkillAttack.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/ToolshedEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CardBoardController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/CardBoardController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/BaseEnemyController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/SkillAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/ToolshedEnemyController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/RakeAttack.cs" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -90,6 +170,9 @@
     <option name="y" value="23" />
     <option name="width" value="1400" />
     <option name="height" value="854" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
@@ -111,25 +194,33 @@
           <expand>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="GGJ2019 (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="GGJ2019 (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="GGJ2019 (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="GGJ2019 (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="GGJ2019 (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="GGJ2019 (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="GGJ2019 (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="GGJ2019 (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="GGJ2019 (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Enemy" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -171,12 +262,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548550075409</updated>
-      <workItem from="1548550076743" duration="243000" />
+      <workItem from="1548550076743" duration="4825000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243000" />
+    <option name="totallyTimeSpent" value="4825000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -233,10 +324,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/InputManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1548542569185" expanded="false" signature="6:78" ph="..." />
+            <marker date="1548542569185" expanded="true" signature="113:864" ph="{...}" />
+            <marker date="1548542569185" expanded="true" signature="156:328" ph="{...}" />
+            <marker date="1548542569185" expanded="true" signature="368:469" ph="{...}" />
+            <marker date="1548542569185" expanded="true" signature="508:588" ph="{...}" />
+            <marker date="1548542569185" expanded="true" signature="594:862" ph="/* void Update() ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/SkillAttack.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding>
+            <marker date="1548557418626" expanded="true" signature="41:97" ph="{...}" />
+            <marker date="1548557418626" expanded="true" signature="148:535" ph="{...}" />
+            <marker date="1548557418626" expanded="true" signature="324:366" ph="{...}" />
+            <marker date="1548557418626" expanded="true" signature="407:454" ph="{...}" />
+            <marker date="1548557418626" expanded="true" signature="487:533" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/BasePlayer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-879">
-          <caret line="0" column="6" lean-forward="true" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding>
             <marker date="1548549728063" expanded="true" signature="6:78" ph="..." />
             <marker date="1548549728063" expanded="true" signature="197:3331" ph="{...}" />
@@ -263,14 +383,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CardBoardController.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/BaseEnemyController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="45" />
+        <state relative-caret-position="585">
+          <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
           <folding>
-            <marker date="1548549728064" expanded="true" signature="6:78" ph="..." />
-            <marker date="1548549728064" expanded="true" signature="126:298" ph="{...}" />
-            <marker date="1548549728064" expanded="true" signature="284:296" ph="{...}" />
+            <marker date="1548556426914" expanded="true" signature="6:52" ph="..." />
+            <marker date="1548556426914" expanded="true" signature="54:135" ph="/// Enemy can only have one of each SkillType attack ... " />
+            <marker date="1548556426914" expanded="true" signature="193:966" ph="{...}" />
+            <marker date="1548556426914" expanded="true" signature="330:396" ph="/// Use to call skill attacks ... " />
+            <marker date="1548556426914" expanded="true" signature="445:763" ph="{...}" />
+            <marker date="1548556426914" expanded="true" signature="478:757" ph="{...}" />
+            <marker date="1548556426914" expanded="true" signature="809:830" ph="{...}" />
+            <marker date="1548556426914" expanded="true" signature="873:894" ph="{...}" />
+            <marker date="1548556426914" expanded="true" signature="943:964" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/ToolshedEnemyController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding>
+            <marker date="1548557428740" expanded="true" signature="58:317" ph="{...}" />
+            <marker date="1548557428740" expanded="true" signature="193:242" ph="{...}" />
+            <marker date="1548557428740" expanded="true" signature="294:315" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/CardBoardController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1548555323429" expanded="true" signature="56:65" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/RakeAttack.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <marker date="1548557465828" expanded="true" signature="37:43" ph="{...}" />
           </folding>
         </state>
       </provider>
