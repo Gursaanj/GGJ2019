@@ -7,6 +7,11 @@ public class ToolShedController : BaseEnemyController
     private Animator _animator;
     
     private SkillAttack meleeAttack;
+
+    public float meleeChance;
+    public float rangedChance;
+
+    public SpriteRenderer cone;
     
     public int shots;
     public float meleeDistance;
@@ -18,13 +23,14 @@ public class ToolShedController : BaseEnemyController
 
     private void Start()
     {
+        HideCone();
         player = GameObject.FindGameObjectWithTag("Player");
         _animator = GetComponent<Animator>();
         
         meleeAttack = new RakeAttack();
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
         if (!skillActive)
         {
@@ -32,11 +38,13 @@ public class ToolShedController : BaseEnemyController
 
             if (distance <= meleeDistance)
             {
-                MeleeAttack();
+                int r = Random.Range(0, Mathf.FloorToInt(1 / meleeChance));
+                if (r == 0)
+                    MeleeAttack();
             }
             else
             {
-                int r = Random.Range(0, 5);
+                int r = Random.Range(0, Mathf.FloorToInt(1 / rangedChance));
                 
                 if (r == 0)
                     RangedAttack();
@@ -58,6 +66,7 @@ public class ToolShedController : BaseEnemyController
     {
         skillActive = true;
         meleeAttack.Init(_animator);
+        StartCoroutine(ShowCone());
         meleeAttack.PlayAnimation();
 
         StartCoroutine(MeleeDone());
@@ -65,7 +74,7 @@ public class ToolShedController : BaseEnemyController
 
     private IEnumerator MeleeDone()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.6f);
 
         skillActive = false;
         yield return null;
@@ -102,5 +111,28 @@ public class ToolShedController : BaseEnemyController
         float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
 
         ObjectPooler.Instance.SpawnFromPool("EnemyBullet", transform.position, Quaternion.Euler(0, 0, angle - 90));
+    }
+
+    private IEnumerator ShowCone()
+    {
+        float xChange = transform.position.x - player.transform.position.x;
+        float yChange = transform.position.y - player.transform.position.y;
+        float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
+        cone.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+        
+        Color oldColor = cone.color;
+        cone.color = new Color(oldColor.r, oldColor.g, oldColor.b, 1f);
+        
+        yield return new WaitForSeconds(1f);
+        
+        HideCone();
+
+        yield return null;
+    }
+
+    private void HideCone()
+    {
+        Color oldColor = cone.color;
+        cone.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0f);
     }
 }
