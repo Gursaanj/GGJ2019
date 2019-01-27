@@ -44,6 +44,6 @@ public class TransitionManager : MonoBehaviour {
     {
         //TODO - Change to increment scene index
         //.LoadScene(1);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
