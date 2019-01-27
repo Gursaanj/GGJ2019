@@ -1,40 +1,138 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ToolShedController : BasePlayer {
+public class ToolShedController : BaseEnemyController
+{
+    private GameObject player;
+    private Animator _animator;
+    
+    private SkillAttack meleeAttack;
 
+    public float meleeChance;
+    public float rangedChance;
+
+    public SpriteRenderer cone;
+    
+    public int shots;
+    public float meleeDistance;
+        
     Vector3 playerDestination;
     bool keepShooting = true;
 
-    private void Update()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null) { 
-            playerDestination = player.transform.position;
-        } else {
-            keepShooting = false;
-        }
+    private bool skillActive = false;
 
+    private void Start()
+    {
+        HideCone();
+        player = GameObject.FindGameObjectWithTag("Player");
+        _animator = GetComponent<Animator>();
+        
+        meleeAttack = new RakeAttack();
+    }
+    
+    private void FixedUpdate()
+    {
+        if (!skillActive)
+        {
+            float distance = Vector3.Distance(player.transform.position, transform.position);
+
+            if (distance <= meleeDistance)
+            {
+                int r = Random.Range(0, Mathf.FloorToInt(1 / meleeChance));
+                if (r == 0)
+                    MeleeAttack();
+            }
+            else
+            {
+                int r = Random.Range(0, Mathf.FloorToInt(1 / rangedChance));
+                
+                if (r == 0)
+                    RangedAttack();
+            }            
+        }
+    }
+
+    protected override void Shoot()
+    {
+        // DOES NOTHING
     }
 
     protected override void Move()
     {
+        // TO PREVENT IT FROM MOVING
     }
-
-
-    protected override void Shoot()
+    
+    protected override void MeleeAttack()
     {
-        if (!_isRangeOnCoolDown && keepShooting) {
+        skillActive = true;
+        meleeAttack.Init(_animator);
+        StartCoroutine(ShowCone());
+        meleeAttack.PlayAnimation();
 
-            float xChange = playerDestination.x - transform.position.x;
-            float yChange = playerDestination.y - transform.position.y;
-            float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
-
-
-            ObjectPooler.Instance.SpawnFromPool("EnemyBullet", transform.position, Quaternion.Euler(0, 0, angle - 90));
-            _isRangeOnCoolDown = true;
-        }
+        StartCoroutine(MeleeDone());
     }
 
+    private IEnumerator MeleeDone()
+    {
+        yield return new WaitForSeconds(2.6f);
+
+        skillActive = false;
+        yield return null;
+    }
+        
+    protected override void RangedAttack()
+    {
+        skillActive = true;
+        StartCoroutine(ShootNails());
+    }
+
+    private IEnumerator ShootNails()
+    {
+        int i = shots;
+        while (i > 0)
+        {
+            ShootNail();
+            i--;
+            yield return new WaitForSecondsRealtime(0.2f);
+        }
+
+        skillActive = false;
+
+        yield return null;
+    }
+
+    private void ShootNail()
+    {
+        if (player != null)
+            playerDestination = player.transform.position;
+        
+        float xChange = playerDestination.x - transform.position.x;
+        float yChange = playerDestination.y - transform.position.y;
+        float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
+
+        ObjectPooler.Instance.SpawnFromPool("EnemyBullet", transform.position, Quaternion.Euler(0, 0, angle - 90));
+    }
+
+    private IEnumerator ShowCone()
+    {
+        float xChange = transform.position.x - player.transform.position.x;
+        float yChange = transform.position.y - player.transform.position.y;
+        float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
+        cone.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+        
+        Color oldColor = cone.color;
+        cone.color = new Color(oldColor.r, oldColor.g, oldColor.b, 1f);
+        
+        yield return new WaitForSeconds(1f);
+        
+        HideCone();
+
+        yield return null;
+    }
+
+    private void HideCone()
+    {
+        Color oldColor = cone.color;
+        cone.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0f);
+    }
 }
