@@ -9,8 +9,6 @@ public class TransitionManager : MonoBehaviour {
     [SerializeField]
     BaseEnemyController deadCharacter;
 
-
-
 	// Use this for initialization
 	void Start () {
         deadCharacter.onDeathDelegate += startTransition;
@@ -19,13 +17,13 @@ public class TransitionManager : MonoBehaviour {
 
 
     void startTransition()
-    { 
+    {
         StartCoroutine(fadeOutScene());
     }
 
     IEnumerator fadeOutScene()
     {
-        for (float i = 0; i <= 1f; i += 0.2f) { 
+        for (float i = 0; i <= 1f; i += 0.2f) {
             yield return new WaitForSeconds(0.1f);
             GetComponent<Image>().color = new Color(0, 0, 0, i);
         }
