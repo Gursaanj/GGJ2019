@@ -355,7 +355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e200937b9bc434dfb9d372bc0ff3bed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools: []
+  pools:
+  - tag: Bullet
+    prefab: {fileID: 1106480902677302, guid: 98e4365560e0840b78ee0f2b4c91325d, type: 2}
+    size: 6
 --- !u!4 &860707934
 Transform:
   m_ObjectHideFlags: 0
