@@ -12,6 +12,7 @@ public class ToolShedController : BaseEnemyController
     public float rangedChance;
 
     public SpriteRenderer cone;
+    private PolygonCollider2D coneCollider;
     
     public int shots;
     public float meleeDistance;
@@ -23,6 +24,7 @@ public class ToolShedController : BaseEnemyController
 
     private void Start()
     {
+        coneCollider = cone.gameObject.GetComponent<PolygonCollider2D>();
         HideCone();
         player = GameObject.FindGameObjectWithTag("Player");
         _animator = GetComponent<Animator>();
@@ -134,5 +136,6 @@ public class ToolShedController : BaseEnemyController
     {
         Color oldColor = cone.color;
         cone.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0f);
+        
     }
 }
