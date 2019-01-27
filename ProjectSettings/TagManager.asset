@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Bullet
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -43,11 +45,11 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 2289528739
+    uniqueID: 1567264233
     locked: 0
   - name: Character
-    uniqueID: 1283240835
+    uniqueID: 2853212361
     locked: 0
   - name: Projectile
-    uniqueID: 3511610855
+    uniqueID: 10057663
     locked: 0
