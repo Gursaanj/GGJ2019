@@ -12,6 +12,13 @@ public abstract class BaseEnemyController : BasePlayer
     [SerializeField]
     RectTransform healthBar;
 
+    protected GameObject player;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     protected override void updateHealthbar()
     {
         healthBar.transform.localScale = new Vector3(_health / base._maxHealth, 1, 1);
