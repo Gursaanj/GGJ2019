@@ -14,7 +14,7 @@ public abstract class SkillAttack : MonoBehaviour
     [Header("Tweakable Numbers")]
     public float damage;
 
-    private Animator _animator;
+    protected Animator _animator;
     
     public void Init(Animator animator)
     {

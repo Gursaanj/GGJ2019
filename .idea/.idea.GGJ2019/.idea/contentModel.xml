@@ -5,6 +5,7 @@
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="CameraMovement.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">
             <e p="JetBrains" t="Include">
@@ -26,7 +27,9 @@
           <e p="ObjectPooler.cs" t="Include" />
           <e p="PlayerProjectile.cs" t="Include" />
           <e p="Projectile.cs" t="Include" />
+          <e p="ToolShedController.cs" t="Include" />
         </e>
+        <e p="ToolShedProjectile.cs" t="Include" />
       </e>
       <e p="GGJ2019.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

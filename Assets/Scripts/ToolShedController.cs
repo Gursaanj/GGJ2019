@@ -1,11 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ToolShedController : BasePlayer {
-
+public class ToolShedController : BaseEnemyController 
+{
+    
+    public SkillAttack meleeAttack;
+    public SkillAttack rangedAttack;
+        
     Vector3 playerDestination;
     bool keepShooting = true;
+    
 
     private void Update()
     {
@@ -18,8 +21,22 @@ public class ToolShedController : BasePlayer {
 
     }
 
-
     protected override void Shoot()
+    {
+        // DOES NOTHING
+    }
+    
+    protected override void MeleeAttack()
+    {
+        meleeAttack.PlayAnimation();
+    }
+        
+    protected override void RangedAttack()
+    {
+        
+    }
+
+    private void ShootNails()
     {
         if (!_isRangeOnCoolDown && keepShooting) {
 
@@ -27,10 +44,8 @@ public class ToolShedController : BasePlayer {
             float yChange = playerDestination.y - transform.position.y;
             float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
 
-
             ObjectPooler.Instance.SpawnFromPool("EnemyBullet", transform.position, Quaternion.Euler(0, 0, angle - 90));
             _isRangeOnCoolDown = true;
         }
     }
-
 }

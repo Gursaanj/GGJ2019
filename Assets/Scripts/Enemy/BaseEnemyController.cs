@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// Enemy can only have one of each SkillType attack
 /// </summary>
-public abstract class BaseEnemyController : MonoBehaviour
+public abstract class BaseEnemyController : BasePlayer
 {
     public SkillAttack[] possibleSkills;
     
