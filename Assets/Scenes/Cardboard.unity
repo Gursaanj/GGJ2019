@@ -467,7 +467,7 @@ Prefab:
     - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
       propertyPath: _speed
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 212049503014055332, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
@@ -527,6 +527,16 @@ Prefab:
     - target: {fileID: 4504779781289704, guid: fc3547c31d0d4d049a5c805842610a8f, type: 2}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
+        type: 2}
+      propertyPath: maxDash
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
+        type: 2}
+      propertyPath: dashMultiplier
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc3547c31d0d4d049a5c805842610a8f, type: 2}
@@ -743,7 +753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1900077238
 MonoBehaviour:
   m_ObjectHideFlags: 0
