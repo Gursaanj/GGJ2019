@@ -11,16 +11,6 @@ public class CardBoardController : BaseEnemyController {
         GetComponent<Animator>().enabled = false;
     }
 
-    protected override void Move()
-    { }
-
-    protected override void Melee()
-    {
-    }
-
-    protected override void Shoot()
-    {
-    }
 
     protected override void onDeath()
     {

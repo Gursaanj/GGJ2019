@@ -9,6 +9,19 @@ public abstract class BaseEnemyController : BasePlayer
     public EnemyDelegate onDeathDelegate;
     public delegate void EnemyDelegate();
 
+    [SerializeField]
+    RectTransform healthBar;
+
+    protected override void updateHealthbar()
+    {
+        healthBar.transform.localScale = new Vector3(_health / base._maxHealth, 1, 1);
+    }
+
+    protected override void onDeath()
+    {
+        //throw new System.NotImplementedException();
+    }
+
     /// <summary>
     /// Use to call skill attacks
     /// </summary>

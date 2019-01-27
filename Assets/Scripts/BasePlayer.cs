@@ -4,39 +4,37 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider))]
-public class BasePlayer : MonoBehaviour {
+public abstract class BasePlayer : MonoBehaviour {
     [SerializeField]
     protected float _speed;
-    [SerializeField]
-    RectTransform healthBar;
 
     [SerializeField]
     protected float _health = 100;
-    private float _maxHealth;
+    protected float _maxHealth;
 
-    [Header("Cool Down")]
-    [SerializeField]
-    float _meleeCooldownTime = 5.0f;
-    [SerializeField]
-    float _RangeCooldownTime = 5.0f;
-    [SerializeField]
-    float _DodgeCooldownTime = 5.0f;
+    //[Header("Cool Down")]
+    //[SerializeField]
+    //float _meleeCooldownTime = 5.0f;
+    //[SerializeField]
+    //float _RangeCooldownTime = 5.0f;
+    //[SerializeField]
+    //float _DodgeCooldownTime = 5.0f;
 
-    float meleeCurrentCoolDownTime;
-    float rangeCurrentCoolDownTime;
-    float dodgeCurrentCoolDownTime;
+    //float meleeCurrentCoolDownTime;
+    //float rangeCurrentCoolDownTime;
+    //float dodgeCurrentCoolDownTime;
 
-    [Header("Damage")]
-    [SerializeField]
-    protected float _meleeDamage = 10;
-    [SerializeField]
-    float attackRange = 10;
+    //[Header("Damage")]
+    //[SerializeField]
+    //protected float _meleeDamage = 10;
+    //[SerializeField]
+    //float attackRange = 10;
 
-    protected bool _isMeleeOnCoolDown = false;
-    protected bool _isRangeOnCoolDown = false;
-    protected bool _isDodgeOnCoolDown = false;
+    //protected bool _isMeleeOnCoolDown = false;
+    //protected bool _isRangeOnCoolDown = false;
+    //protected bool _isDodgeOnCoolDown = false;
 
-    private Rigidbody2D  playerRigidbody;
+    protected Rigidbody2D  characterRigidBody;
     //public DashState dashState;
     //public float dashTimer;
     //public float maxDash;
@@ -46,23 +44,23 @@ public class BasePlayer : MonoBehaviour {
     // Use this for initialization
     void Start () {
         _maxHealth = _health;
-        playerRigidbody = GetComponent<Rigidbody2D>();
-        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        characterRigidBody = GetComponent<Rigidbody2D>();
+        characterRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
 
 	// Update is called once per frame
-void setupCoolDownTime()
-{
-    meleeCurrentCoolDownTime = _meleeCooldownTime;
-    rangeCurrentCoolDownTime = _RangeCooldownTime;
-    dodgeCurrentCoolDownTime = _DodgeCooldownTime;
-}
+//void setupCoolDownTime()
+//{
+//    meleeCurrentCoolDownTime = _meleeCooldownTime;
+//    rangeCurrentCoolDownTime = _RangeCooldownTime;
+//    dodgeCurrentCoolDownTime = _DodgeCooldownTime;
+//}
     // Update is called once per frame
     void FixedUpdate () {
-        Move();
+        //Move();
         //Shoot();
         //Melee();
-        CoolDown();
+        //CoolDown();
         //Dashing();
     }
 
@@ -111,15 +109,9 @@ void setupCoolDownTime()
         }
     }
 
-    void updateHealthbar()
-    {
-        healthBar.transform.localScale = new Vector3(_health / _maxHealth, 1, 1);
-    }
+    protected abstract void updateHealthbar();
 
-    protected virtual void onDeath()
-    {
-        Destroy(gameObject);
-    }
+    protected abstract void onDeath();
 
     //protected virtual void Shoot()
     //{
@@ -157,49 +149,49 @@ void setupCoolDownTime()
     //    }
     //}
 
-    protected virtual void Move()
-    {
-        Vector3 direction = InputManager.MainInput();
-        bool isWalking = direction != Vector3.zero;
-        GetComponent<Animator>().SetBool("isWalking", isWalking);
-        playerRigidbody.velocity = (Vector3.Normalize(direction) * _speed);
-    }
+    //protected virtual void Move()
+    //{
+    //    Vector3 direction = InputManager.MainInput();
+    //    bool isWalking = direction != Vector3.zero;
+    //    GetComponent<Animator>().SetBool("isWalking", isWalking);
+    //    characterRigidBody.velocity = (Vector3.Normalize(direction) * _speed);
+    //}
 
 
-    #region CoolDown
-    private void CoolDown()
-    {
-        if (_isMeleeOnCoolDown)
-        {
-            meleeCurrentCoolDownTime -= Time.fixedDeltaTime;
-            if (meleeCurrentCoolDownTime <= 0)
-            {
-                _isMeleeOnCoolDown = false;
-                meleeCurrentCoolDownTime = _meleeCooldownTime;
-            }
-        }
+    //#region CoolDown
+    //private void CoolDown()
+    //{
+    //    if (_isMeleeOnCoolDown)
+    //    {
+    //        meleeCurrentCoolDownTime -= Time.fixedDeltaTime;
+    //        if (meleeCurrentCoolDownTime <= 0)
+    //        {
+    //            _isMeleeOnCoolDown = false;
+    //            meleeCurrentCoolDownTime = _meleeCooldownTime;
+    //        }
+    //    }
 
-        if (_isRangeOnCoolDown)
-        {
-            rangeCurrentCoolDownTime -= Time.fixedDeltaTime;
-            if(rangeCurrentCoolDownTime <= 0)
-            {
-                _isRangeOnCoolDown = false;
-                rangeCurrentCoolDownTime = _RangeCooldownTime;
-            }
-        }
+    //    if (_isRangeOnCoolDown)
+    //    {
+    //        rangeCurrentCoolDownTime -= Time.fixedDeltaTime;
+    //        if(rangeCurrentCoolDownTime <= 0)
+    //        {
+    //            _isRangeOnCoolDown = false;
+    //            rangeCurrentCoolDownTime = _RangeCooldownTime;
+    //        }
+    //    }
 
-        if (_isDodgeOnCoolDown)
-        {
-            dodgeCurrentCoolDownTime -= Time.fixedDeltaTime;
-            if (dodgeCurrentCoolDownTime <= 0)
-            {
-                _isDodgeOnCoolDown = false;
-                dodgeCurrentCoolDownTime = _DodgeCooldownTime;
-            }
-        }
-    }
-    #endregion
+    //    if (_isDodgeOnCoolDown)
+    //    {
+    //        dodgeCurrentCoolDownTime -= Time.fixedDeltaTime;
+    //        if (dodgeCurrentCoolDownTime <= 0)
+    //        {
+    //            _isDodgeOnCoolDown = false;
+    //            dodgeCurrentCoolDownTime = _DodgeCooldownTime;
+    //        }
+    //    }
+    //}
+    //#endregion
 
     //public enum DashState
     //{

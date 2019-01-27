@@ -51,16 +51,6 @@ public class ToolShedController : BaseEnemyController
             }            
         }
     }
-
-    protected override void Shoot()
-    {
-        // DOES NOTHING
-    }
-
-    protected override void Move()
-    {
-        // TO PREVENT IT FROM MOVING
-    }
     
     protected override void MeleeAttack()
     {
