@@ -37,10 +37,10 @@ public class BasePlayer : MonoBehaviour {
     protected bool _isDodgeOnCoolDown = false;
 
     private Rigidbody2D  playerRigidbody;
-    public DashState dashState;
-    public float dashTimer;
-    public float maxDash;
-    public float dashMultiplier;
+    //public DashState dashState;
+    //public float dashTimer;
+    //public float maxDash;
+    //public float dashMultiplier;
 
 
     // Use this for initialization
@@ -60,45 +60,45 @@ void setupCoolDownTime()
     // Update is called once per frame
     void FixedUpdate () {
         Move();
-        Shoot();
-        Melee();
+        //Shoot();
+        //Melee();
         CoolDown();
-        Dashing();
+        //Dashing();
     }
 
-    private void Dashing()
-    {
-        switch (dashState)
-        {
-            case DashState.Ready:
-                var isDashKeyDown = Input.GetKeyDown(KeyCode.LeftShift);
-                if (isDashKeyDown)
-                {
-                    _speed *= dashMultiplier;
-                    //Isdodging = true;
-                    dashState = DashState.Dashing;
-                }
-                break;
-            case DashState.Dashing:
-                dashTimer += Time.deltaTime * 6;
-                if (dashTimer >= maxDash)
-                {
-                    dashTimer = maxDash;
-                    //Isdodging = false;
-                    _speed /= dashMultiplier;
-                    dashState = DashState.Cooldown;
-                }
-                break;
-            case DashState.Cooldown:
-                dashTimer -= Time.deltaTime;
-                if (dashTimer <= 0)
-                {
-                    dashTimer = 0;
-                    dashState = DashState.Ready;
-                }
-                break;
-        }
-    }
+    //private void Dashing()
+    //{
+    //    switch (dashState)
+    //    {
+    //        case DashState.Ready:
+    //            var isDashKeyDown = Input.GetKeyDown(KeyCode.LeftShift);
+    //            if (isDashKeyDown)
+    //            {
+    //                _speed *= dashMultiplier;
+    //                //Isdodging = true;
+    //                dashState = DashState.Dashing;
+    //            }
+    //            break;
+    //        case DashState.Dashing:
+    //            dashTimer += Time.deltaTime * 6;
+    //            if (dashTimer >= maxDash)
+    //            {
+    //                dashTimer = maxDash;
+    //                //Isdodging = false;
+    //                _speed /= dashMultiplier;
+    //                dashState = DashState.Cooldown;
+    //            }
+    //            break;
+    //        case DashState.Cooldown:
+    //            dashTimer -= Time.deltaTime;
+    //            if (dashTimer <= 0)
+    //            {
+    //                dashTimer = 0;
+    //                dashState = DashState.Ready;
+    //            }
+    //            break;
+    //    }
+    //}
 
 
     public void ReduceHealth(float damage)
@@ -121,41 +121,41 @@ void setupCoolDownTime()
         Destroy(gameObject);
     }
 
-    protected virtual void Shoot()
-    {
-        if (Input.GetMouseButtonDown(0) && !_isRangeOnCoolDown)
-        {
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            float xChange = worldPosition.x - transform.position.x;
-            float yChange = worldPosition.y - transform.position.y;
-            float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
-            ObjectPooler.Instance.SpawnFromPool("Bullet", transform.position, Quaternion.Euler(0, 0, angle - 90));
-            _isRangeOnCoolDown = true;
-        }
-    }
+    //protected virtual void Shoot()
+    //{
+    //    if (Input.GetMouseButtonDown(0) && !_isRangeOnCoolDown)
+    //    {
+    //        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //        float xChange = worldPosition.x - transform.position.x;
+    //        float yChange = worldPosition.y - transform.position.y;
+    //        float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
+    //        ObjectPooler.Instance.SpawnFromPool("Bullet", transform.position, Quaternion.Euler(0, 0, angle - 90));
+    //        _isRangeOnCoolDown = true;
+    //    }
+    //}
 
-    protected virtual void Melee()
-    {
-        if (Input.GetMouseButtonDown(1) && !_isMeleeOnCoolDown)
-        {
-            GetComponent<Animator>().SetTrigger("Attack");
-            Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(transform.position, attackRange);
-            damageEnemiesIfNeeded(enemiesHit);
-            _isMeleeOnCoolDown = true;
-        }
-    }
+    //protected virtual void Melee()
+    //{
+    //    if (Input.GetMouseButtonDown(1) && !_isMeleeOnCoolDown)
+    //    {
+    //        GetComponent<Animator>().SetTrigger("Attack");
+    //        Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(transform.position, attackRange);
+    //        damageEnemiesIfNeeded(enemiesHit);
+    //        _isMeleeOnCoolDown = true;
+    //    }
+    //}
 
-    void damageEnemiesIfNeeded(Collider2D[] enemies)
-    {
-        foreach(Collider2D col in enemies)
-        {
-            GameObject enemy = col.gameObject;
-            if (enemy.CompareTag("Enemy"))
-            {
-                enemy.GetComponent<BasePlayer>().ReduceHealth(_meleeDamage);
-            }
-        }
-    }
+    //void damageEnemiesIfNeeded(Collider2D[] enemies)
+    //{
+    //    foreach(Collider2D col in enemies)
+    //    {
+    //        GameObject enemy = col.gameObject;
+    //        if (enemy.CompareTag("Enemy"))
+    //        {
+    //            enemy.GetComponent<BasePlayer>().ReduceHealth(_meleeDamage);
+    //        }
+    //    }
+    //}
 
     protected virtual void Move()
     {
@@ -201,17 +201,17 @@ void setupCoolDownTime()
     }
     #endregion
 
-    public enum DashState
-    {
-        Ready,
-        Dashing,
-        Cooldown
-    }
+    //public enum DashState
+    //{
+    //    Ready,
+    //    Dashing,
+    //    Cooldown
+    //}
 
-    public void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-    }
+    //public void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(transform.position, attackRange);
+    //}
 
 }
