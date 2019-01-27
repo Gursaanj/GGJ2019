@@ -18,6 +18,10 @@ public class ToolShedController : BasePlayer {
 
     }
 
+    protected override void Move()
+    {
+    }
+
 
     protected override void Shoot()
     {

@@ -160,6 +160,8 @@ void setupCoolDownTime()
     protected virtual void Move()
     {
         Vector3 direction = InputManager.MainInput();
+        bool isWalking = direction != Vector3.zero;
+        GetComponent<Animator>().SetBool("isWalking", isWalking);
         playerRigidbody.velocity = (Vector3.Normalize(direction) * _speed);
     }
 

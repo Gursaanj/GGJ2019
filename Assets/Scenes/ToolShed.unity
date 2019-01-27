@@ -264,6 +264,11 @@ MonoBehaviour:
   _RangeCooldownTime: 0.5
   _DodgeCooldownTime: 5
   _meleeDamage: 10
+  attackRange: 10
+  dashState: 0
+  dashTimer: 0
+  maxDash: 0
+  dashMultiplier: 0
 --- !u!212 &400408556
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -689,6 +694,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4504779781289704, guid: fc3547c31d0d4d049a5c805842610a8f, type: 2}
       propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
+        type: 2}
+      propertyPath: _meleeCooldownTime
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
