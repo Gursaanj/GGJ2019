@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolShedController : BaseEnemyController
 {
@@ -11,7 +12,14 @@ public class ToolShedController : BaseEnemyController
     public float meleeChance;
     public float rangedChance;
 
+    public int meleeDamage;
+    public int rangedDamage;
+
+    private bool meleeHit;
+
     public SpriteRenderer cone;
+    public GameObject rippleMask;
+    public ParticleSystem ripple;
     private PolygonCollider2D coneCollider;
     
     public int shots;
@@ -25,7 +33,9 @@ public class ToolShedController : BaseEnemyController
     private void Start()
     {
         coneCollider = cone.gameObject.GetComponent<PolygonCollider2D>();
+        coneCollider.enabled = false;
         HideCone();
+        rippleMask.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
         _animator = GetComponent<Animator>();
         
@@ -53,7 +63,20 @@ public class ToolShedController : BaseEnemyController
             }            
         }
     }
-    
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (!meleeHit)
+            {
+                player.GetComponent<BasePlayer>().ReduceHealth(meleeDamage);
+                print("Player got hit by: ToolShed Melee Skill");
+                meleeHit = true;
+            }
+        }
+    }
+
     protected override void MeleeAttack()
     {
         skillActive = true;
@@ -66,8 +89,9 @@ public class ToolShedController : BaseEnemyController
 
     private IEnumerator MeleeDone()
     {
-        yield return new WaitForSeconds(2.6f);
-
+        yield return new WaitForSeconds(2.4f);
+        
+        rippleMask.SetActive(false);
         skillActive = false;
         yield return null;
     }
@@ -111,6 +135,8 @@ public class ToolShedController : BaseEnemyController
         float yChange = transform.position.y - player.transform.position.y;
         float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
         cone.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+        rippleMask.transform.rotation = Quaternion.Euler(0, 0, angle - 90); 
+        rippleMask.SetActive(false);
         
         Color oldColor = cone.color;
         cone.color = new Color(oldColor.r, oldColor.g, oldColor.b, 1f);
@@ -126,6 +152,9 @@ public class ToolShedController : BaseEnemyController
     {
         Color oldColor = cone.color;
         cone.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0f);
-        
+
+        coneCollider.enabled = true;
+        rippleMask.SetActive(true);
+        meleeHit = false;
     }
 }
