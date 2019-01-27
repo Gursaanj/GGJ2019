@@ -318,11 +318,9 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   mask: {fileID: 1911182882564496}
   warning: {fileID: 212986944135446744}
-  carPrefab: {fileID: 1631214719391628, guid: ead043777c6734e8fb997d8b629d70df, type: 2}
   doorTransform: {fileID: 4256449657272178}
   meleeDistance: 10
   meleeDamage: 1
-  rangedDamage: 1
   ccChance: 0.003
   meleeChance: 0.01
   rangedChance: 0.01
