@@ -30,6 +30,8 @@ public class ToolShedController : BaseEnemyController
     private bool skillActive = false;
     private bool waitForLoad = false;
 
+    bool isDead = false;
+
     private void Start()
     {
         coneCollider = cone.gameObject.GetComponent<PolygonCollider2D>();
@@ -54,7 +56,7 @@ public class ToolShedController : BaseEnemyController
 
     private void FixedUpdate()
     {
-        if (!skillActive && !waitForLoad)
+        if (!skillActive && !waitForLoad && !isDead)
         {
             float distance = Vector3.Distance(player.transform.position, transform.position);
 
@@ -86,6 +88,22 @@ public class ToolShedController : BaseEnemyController
                 meleeHit = true;
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isDead)
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            base.onDeathDelegate();
+        }
+    }
+
+    protected override void onDeath()
+    {
+        isDead = true;
+        GetComponent<Animator>().SetTrigger("Death");
     }
 
     protected override void MeleeAttack()
