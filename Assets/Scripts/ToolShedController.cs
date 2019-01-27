@@ -29,7 +29,6 @@ public class ToolShedController : BaseEnemyController
         if (!skillActive)
         {
             float distance = Vector3.Distance(player.transform.position, transform.position);
-            print(distance);
 
             if (distance <= meleeDistance)
             {

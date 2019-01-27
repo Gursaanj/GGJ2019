@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardBoardController : BasePlayer {
+public class CardBoardController : BaseEnemyController {
 
     public delegate void CardDelegate();
     public CardDelegate onDeathDelegate;

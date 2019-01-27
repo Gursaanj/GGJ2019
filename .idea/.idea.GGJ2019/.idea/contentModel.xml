@@ -15,9 +15,9 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="BasePlayer.cs" t="Include" />
+          <e p="CardBoardController.cs" t="Include" />
           <e p="Enemy" t="Include">
             <e p="BaseEnemyController.cs" t="Include" />
-            <e p="CardBoardController.cs" t="Include" />
             <e p="RakeAttack.cs" t="Include" />
             <e p="SkillAttack.cs" t="Include" />
           </e>
@@ -29,6 +29,7 @@
           <e p="ToolShedController.cs" t="Include" />
         </e>
         <e p="ToolShedProjectile.cs" t="Include" />
+        <e p="TransitionManager.cs" t="Include" />
       </e>
       <e p="GGJ2019.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
