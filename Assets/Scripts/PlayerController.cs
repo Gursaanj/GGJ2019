@@ -33,15 +33,13 @@ public class PlayerController : BasePlayer {
     [SerializeField]
     float dashMultiplier = 5;
 
-    DashState dashState;
-    float dashTimer = 0;
-
     [SerializeField]
     HealthController healthbar;
 
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         setupCoolDownTime();
     }
 
@@ -72,7 +70,7 @@ public class PlayerController : BasePlayer {
             GetComponent<SpriteRenderer>().flipX = last.x < 0;
 
             transform.Translate(last * dashMultiplier);
-            string animName = (last.y != 0) ? "DashVert" : "DashHori";
+            string animName = (last.y != 0) ? "DashVert" : "DashHori";  
             GetComponent<Animator>().SetTrigger(animName);
 
             _isDashOnCoolDown = true;
@@ -166,13 +164,6 @@ public class PlayerController : BasePlayer {
         }
     }
     #endregion
-
-    public enum DashState
-    {
-        Ready,
-        Dashing,
-        Cooldown
-    }
 
     public void OnDrawGizmosSelected()
     {

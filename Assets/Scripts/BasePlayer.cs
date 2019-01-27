@@ -15,11 +15,15 @@ public abstract class BasePlayer : MonoBehaviour {
     protected Rigidbody2D  characterRigidBody;
 
     // Use this for initialization
-    void Start () {
-        _maxHealth = _health;
+    protected virtual void Awake () {
         characterRigidBody = GetComponent<Rigidbody2D>();
         characterRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
+
+    protected virtual void onStart()
+    {
+        _maxHealth = _health;
+    }
 
 
     public void ReduceHealth(float damage)

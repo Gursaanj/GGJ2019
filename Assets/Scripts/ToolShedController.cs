@@ -31,9 +31,6 @@ public class ToolShedController : BaseEnemyController
     private bool skillActive = false;
     private bool waitForLoad = false;
 
-    [SerializeField]
-    HealthController healthbar;
-
     private void Start()
     {
         coneCollider = cone.gameObject.GetComponent<PolygonCollider2D>();

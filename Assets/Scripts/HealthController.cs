@@ -7,31 +7,27 @@ public class HealthController : MonoBehaviour {
     [SerializeField]
     GameObject[] hearts;
 
+    //0 , 1, 2
+
     [SerializeField]
     [Range(1, 3)]
     int lives;
 
     int currentLives;
+    //1, 2, 
 
     private void Awake()
     {
-        if (PlayerPrefs.GetInt("lives", 0) != 0)
-        {
-            currentLives = PlayerPrefs.GetInt("lives");
-            for (int i = 0; i < hearts.Length; i++)
-            {
-                bool isActive = i + 1 <= lives;
-                hearts[i].SetActive(isActive);
-            }
-        }
-        else
+        currentLives = PlayerPrefs.GetInt("lives", lives);
+        if (currentLives == 0)
         {
             currentLives = lives;
-            for (int i = 0; i < hearts.Length; i++)
-            {
-                bool isActive = i + 1 <= lives;
-                hearts[i].SetActive(isActive);
-            }
+        }
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            bool isActive = i + 1 <= currentLives;
+            hearts[i].SetActive(isActive);
         }
     }
    
@@ -46,9 +42,8 @@ public class HealthController : MonoBehaviour {
     public void decremeantHearts()
     {
         currentLives--;
-        currentLives = Mathf.Clamp(currentLives - 1, 0, lives);
-        hearts[currentLives].SetActive(false);
-        lives = currentLives;
+        int index = Mathf.Clamp(currentLives, 0, hearts.Length-1);
+        hearts[index].SetActive(false);
         PlayerPrefs.SetInt("lives", lives);
     }
 }
