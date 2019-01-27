@@ -29,6 +29,8 @@ public class BasePlayer : MonoBehaviour {
     [Header("Damage")]
     [SerializeField]
     protected float _meleeDamage = 10;
+    [SerializeField]
+    float attackRange = 10;
 
     protected bool _isMeleeOnCoolDown = false;
     protected bool _isRangeOnCoolDown = false;
@@ -79,23 +81,37 @@ void setupCoolDownTime()
 
     protected virtual void Shoot()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !_isRangeOnCoolDown)
         {
-            //TODO - Shoot function
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             float xChange = worldPosition.x - transform.position.x;
             float yChange = worldPosition.y - transform.position.y;
             float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
-            PlayerProjectile Shot = ObjectPooler.Instance.SpawnFromPool("Bullet", transform.position, Quaternion.Euler(0, 0, angle - 90)).GetComponent<PlayerProjectile>();
+            ObjectPooler.Instance.SpawnFromPool("Bullet", transform.position, Quaternion.Euler(0, 0, angle - 90));
+            _isRangeOnCoolDown = true;
         }
     }
 
     protected virtual void Melee()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !_isMeleeOnCoolDown)
         {
-            //TODO Melee function
             GetComponent<Animator>().SetTrigger("Attack");
+            Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(transform.position, attackRange);
+            damageEnemiesIfNeeded(enemiesHit);
+            _isMeleeOnCoolDown = true;
+        }
+    }
+
+    void damageEnemiesIfNeeded(Collider2D[] enemies)
+    {
+        foreach(Collider2D col in enemies)
+        {
+            GameObject enemy = col.gameObject;
+            if (enemy.CompareTag("Enemy"))
+            {
+                enemy.GetComponent<BasePlayer>().ReduceHealth(_meleeDamage);
+            }
         }
     }
 
@@ -140,5 +156,11 @@ void setupCoolDownTime()
         }
     }
     #endregion
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
 
 }
