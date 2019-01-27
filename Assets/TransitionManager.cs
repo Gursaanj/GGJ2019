@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class TransitionManager : MonoBehaviour {
 
-    //TODO - change to enemy base
     [SerializeField]
-    CardBoardController deadCharacter;
+    BaseEnemyController deadCharacter;
 
 	// Use this for initialization
 	void Start () {

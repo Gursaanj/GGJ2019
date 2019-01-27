@@ -6,6 +6,9 @@ using UnityEngine;
 /// </summary>
 public abstract class BaseEnemyController : BasePlayer
 {
+    public EnemyDelegate onDeathDelegate;
+    public delegate void EnemyDelegate();
+
     /// <summary>
     /// Use to call skill attacks
     /// </summary>
@@ -24,7 +27,8 @@ public abstract class BaseEnemyController : BasePlayer
                 break;
         }
     }
-    
+
+
     protected virtual void MeleeAttack()
     {
         
