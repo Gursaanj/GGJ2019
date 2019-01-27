@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public enum SkillType
 {
@@ -7,14 +8,15 @@ public enum SkillType
     CrowdControl = 2
 }
 
-public abstract class SkillAttack : MonoBehaviour
+[Serializable]
+public abstract class SkillAttack
 {
     public SkillType skillType;
     
     [Header("Tweakable Numbers")]
     public float damage;
 
-    private Animator _animator;
+    protected Animator _animator;
     
     public void Init(Animator animator)
     {

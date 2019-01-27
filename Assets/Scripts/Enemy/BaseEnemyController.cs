@@ -6,13 +6,8 @@ using UnityEngine;
 /// </summary>
 public abstract class BaseEnemyController : BasePlayer
 {
-    public delegate void EnemyDelegate();
     public EnemyDelegate onDeathDelegate;
-
-    public SkillAttack[] possibleSkills;
-    
-    // Queue of skill attacks
-    protected Queue<SkillAttack> queuedSkillAttacks;
+    public delegate void EnemyDelegate();
 
     /// <summary>
     /// Use to call skill attacks
