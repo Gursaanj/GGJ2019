@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
@@ -260,8 +260,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb419c6151f18436ba1bf3816b50e898, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   deadCharacter: {fileID: 1548445326}
   fadeOutTime: 2
 --- !u!1 &615746998
@@ -308,8 +308,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -377,8 +377,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 1, b: 0.04225135, a: 1}
   m_RaycastTarget: 1
@@ -427,8 +427,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e200937b9bc434dfb9d372bc0ff3bed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   pools:
   - tag: Bullet
     prefab: {fileID: 1106480902677302, guid: 98e4365560e0840b78ee0f2b4c91325d, type: 2}
@@ -472,8 +472,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -490,8 +490,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
@@ -550,12 +550,12 @@ Prefab:
     - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
       propertyPath: _speed
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 212049503014055332, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
       propertyPath: m_Sprite
-      value: 
+      value:
       objectReference: {fileID: 21300006, guid: 397bc631ecafb484e987c2f086e1ad6c,
         type: 3}
     - target: {fileID: 212049503014055332, guid: fc3547c31d0d4d049a5c805842610a8f,
@@ -591,7 +591,7 @@ Prefab:
     - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
       propertyPath: healthBar
-      value: 
+      value:
       objectReference: {fileID: 850461148}
     - target: {fileID: 212049503014055332, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
@@ -613,18 +613,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
-      propertyPath: attackRange
-      value: 1.37
+      propertyPath: maxDash
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
-      propertyPath: _meleeCooldownTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
-        type: 2}
-      propertyPath: _RangeCooldownTime
-      value: 1
+      propertyPath: dashMultiplier
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc3547c31d0d4d049a5c805842610a8f, type: 2}
@@ -673,7 +668,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -749,12 +744,12 @@ Prefab:
     - target: {fileID: 114554448828807616, guid: 8bc0e1ec8040e4806a40192fdbbfe417,
         type: 2}
       propertyPath: target
-      value: 
+      value:
       objectReference: {fileID: 1266848265}
     - target: {fileID: 114554448828807616, guid: 8bc0e1ec8040e4806a40192fdbbfe417,
         type: 2}
       propertyPath: background
-      value: 
+      value:
       objectReference: {fileID: 1315600821}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc0e1ec8040e4806a40192fdbbfe417, type: 2}
@@ -778,7 +773,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -830,7 +825,7 @@ Prefab:
     - target: {fileID: 114054190530392908, guid: 922352a8f817f41c79450957cf510323,
         type: 2}
       propertyPath: healthBar
-      value: 
+      value:
       objectReference: {fileID: 615746999}
     - target: {fileID: 212667676552458350, guid: 922352a8f817f41c79450957cf510323,
         type: 2}
@@ -910,8 +905,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -926,8 +921,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1

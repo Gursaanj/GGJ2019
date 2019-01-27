@@ -37,6 +37,11 @@ public class BasePlayer : MonoBehaviour {
     protected bool _isDodgeOnCoolDown = false;
 
     private Rigidbody2D  playerRigidbody;
+    public DashState dashState;
+    public float dashTimer;
+    public float maxDash;
+    public float dashMultiplier;
+
 
     // Use this for initialization
     void Start () {
@@ -58,7 +63,44 @@ void setupCoolDownTime()
         Shoot();
         Melee();
         CoolDown();
+        Dashing();
     }
+
+    private void Dashing()
+    {
+        switch (dashState)
+        {
+            case DashState.Ready:
+                var isDashKeyDown = Input.GetKeyDown(KeyCode.LeftShift);
+                if (isDashKeyDown)
+                {
+                    _speed *= dashMultiplier;
+                    //Isdodging = true;
+                    dashState = DashState.Dashing;
+                }
+                break;
+            case DashState.Dashing:
+                dashTimer += Time.deltaTime * 6;
+                if (dashTimer >= maxDash)
+                {
+                    dashTimer = maxDash;
+                    //Isdodging = false;
+                    _speed /= dashMultiplier;
+                    dashState = DashState.Cooldown;
+                }
+                break;
+            case DashState.Cooldown:
+                dashTimer -= Time.deltaTime;
+                if (dashTimer <= 0)
+                {
+                    dashTimer = 0;
+                    dashState = DashState.Ready;
+                }
+                break;
+        }
+    }
+
+
     public void ReduceHealth(float damage)
     {
         _health = Mathf.Max(0, _health - damage);
@@ -157,10 +199,11 @@ void setupCoolDownTime()
     }
     #endregion
 
-    private void OnDrawGizmosSelected()
+    public enum DashState
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Ready,
+        Dashing,
+        Cooldown
     }
 
 }
