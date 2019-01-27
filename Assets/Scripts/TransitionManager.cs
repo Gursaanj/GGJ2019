@@ -42,6 +42,7 @@ public class TransitionManager : MonoBehaviour {
 
     void changeScene()
     {
-        SceneManager.LoadScene(1);
+        int num = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(num);
     }
 }
