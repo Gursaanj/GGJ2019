@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class InputManager {
 
+    public static Vector3 lastPosition = Vector3.left;
+
     public static float MainHorizontal()
     {
         float r = Input.GetAxis("Horizontal");
@@ -18,19 +20,16 @@ public static class InputManager {
 
     public static Vector3 MainInput()
     {
-        return new Vector3(MainHorizontal(), MainVertical(), 0.0f);
+        Vector3 input = new Vector3(MainHorizontal(), MainVertical(), 0.0f);
+        if (input != Vector3.zero)
+        {
+            lastPosition = input;
+        }
+        return input;
     }
 
-    /*
-    void Update()
-    {
-        Vector3 direction = InputManager.MainInput(); //Get input
-        Move(direction);
+    public static bool isDashing()
+    { 
+        return Input.GetButtonDown("Dash");
     }
-
-    private void Move(Vector3 direction)
-    {
-        playerRigidbody.velocity = (Vector3.Normalize(direction) * base.moveSpeed);
-    }
-    */
 }
