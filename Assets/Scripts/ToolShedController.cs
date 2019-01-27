@@ -25,11 +25,20 @@ public class ToolShedController : BaseEnemyController
     {
         HideCone();
         player = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(waitPlease(2.0f));
+        //_animator = GetComponent<Animator>();
+
+        //meleeAttack = new RakeAttack();
+    }
+
+    IEnumerator waitPlease(float wait)
+    {
+        yield return new WaitForSeconds(wait);
         _animator = GetComponent<Animator>();
-        
+
         meleeAttack = new RakeAttack();
     }
-    
+
     private void FixedUpdate()
     {
         if (!skillActive)
