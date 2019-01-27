@@ -2,76 +2,138 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider))]
 public class BasePlayer : MonoBehaviour {
-    public float _speed;
-    public float _health = 100;
-    private bool _MeleeCooldown = false;
-    public float _meleeCooldownTime = 5.0f;
-    private bool _RangeCooldown = false;
-    public float _RangeCooldownTime = 5.0f;
-    private bool _DodgeCooldown = false;
-    public float _DodgeCooldownTime = 5.0f;
-    private Rigidbody2D playerRigidbody;
-    public GameObject bullet;
-    public Transform baseTrans;
+    [SerializeField]
+    protected float _speed;
+    [SerializeField]
+    RectTransform healthBar;
 
+    [SerializeField]
+    protected float _health = 100;
+    private float _maxHealth;
+
+    [Header("Cool Down")]
+    [SerializeField]
+    float _meleeCooldownTime = 5.0f;
+    [SerializeField]
+    float _RangeCooldownTime = 5.0f;
+    [SerializeField]
+    float _DodgeCooldownTime = 5.0f;
+
+    float meleeCurrentCoolDownTime;
+    float rangeCurrentCoolDownTime;
+    float dodgeCurrentCoolDownTime;
+
+    [Header("Damage")]
+    [SerializeField]
+    protected float _meleeDamage = 10;
+
+    protected bool _isMeleeOnCoolDown = false;
+    protected bool _isRangeOnCoolDown = false;
+    protected bool _isDodgeOnCoolDown = false;
+
+    private Rigidbody2D  playerRigidbody;
 
     // Use this for initialization
     void Start () {
+        _maxHealth = _health;
         playerRigidbody = GetComponent<Rigidbody2D>();
+        playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        //Vector2 amountToMove;
-    
-        Vector3 direction = InputManager.MainInput(); //Get input
-        Move(direction);
-    
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            float xChange = worldPosition.x - baseTrans.position.x;
-            float yChange = worldPosition.y - baseTrans.position.y;
-            float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
-            Debug.Log(angle);
-            Shoot(angle);
-        }
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            Melee();
-        }
+	// Update is called once per frame
+void setupCoolDownTime()
+{
+    meleeCurrentCoolDownTime = _meleeCooldownTime;
+    rangeCurrentCoolDownTime = _RangeCooldownTime;
+    dodgeCurrentCoolDownTime = _DodgeCooldownTime;
+}
+    // Update is called once per frame
+    void FixedUpdate () {
+        Move();
+        Shoot();
+        Melee();
+        CoolDown();
     }
     public void ReduceHealth(float damage)
     {
-        _health -= damage;
+        _health = Mathf.Max(0, _health - damage);
+        updateHealthbar();
         if (_health <= 0)
         {
             onDeath();
         }
     }
 
-    private void onDeath()
+    void updateHealthbar()
+    {
+        healthBar.transform.localScale = new Vector3(_health / _maxHealth, 1, 1);
+    }
+
+    protected virtual void onDeath()
     {
         Destroy(gameObject);
     }
 
-    private void Shoot(float angle)
+    protected virtual void Shoot()
     {
-        // todo Shoot
-        PlayerProjectile Shot = ObjectPooler.Instance.SpawnFromPool("Bullet", transform.position, Quaternion.Euler(0, 0, angle - 90)).GetComponent<PlayerProjectile>();
-        //Instantiate(bullet, baseTrans.position, Quaternion.Euler(0, 0, angle - 90)).GetComponent<PlayerProjectile>();
-        //Debug.Log(transform.position);
+        if (Input.GetMouseButtonDown(0))
+        {
+            //TODO - Shoot function
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            float xChange = worldPosition.x - transform.position.x;
+            float yChange = worldPosition.y - transform.position.y;
+            float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
+            PlayerProjectile Shot = ObjectPooler.Instance.SpawnFromPool("Bullet", transform.position, Quaternion.Euler(0, 0, angle - 90)).GetComponent<PlayerProjectile>();
+        }
     }
 
-    private void Melee()
+    protected virtual void Melee()
     {
-       // todo melee
+        if (Input.GetMouseButtonDown(1))
+        {
+            //TODO Melee function
+        }
     }
 
-    private void Move(Vector3 direction)
+    protected virtual void Move()
     {
+        Vector3 direction = InputManager.MainInput();
         playerRigidbody.velocity = (Vector3.Normalize(direction) * _speed);
+    }
+
+    private void CoolDown()
+    {
+        if (_isMeleeOnCoolDown)
+        {
+            meleeCurrentCoolDownTime -= Time.fixedDeltaTime;
+            if (meleeCurrentCoolDownTime <= 0)
+            {
+                _isMeleeOnCoolDown = false;
+                meleeCurrentCoolDownTime = _meleeCooldownTime;
+            }
+        }
+
+        if (_isRangeOnCoolDown)
+        {
+            rangeCurrentCoolDownTime -= Time.fixedDeltaTime;
+            if(rangeCurrentCoolDownTime <= 0)
+            {
+                _isRangeOnCoolDown = false;
+                rangeCurrentCoolDownTime = _RangeCooldownTime;
+            }
+        }
+
+        if (_isDodgeOnCoolDown)
+        {
+            dodgeCurrentCoolDownTime -= Time.fixedDeltaTime;
+            if (dodgeCurrentCoolDownTime <= 0)
+            {
+                _isDodgeOnCoolDown = false;
+                dodgeCurrentCoolDownTime = _DodgeCooldownTime;
+            }
+        }
     }
 }
