@@ -29,6 +29,10 @@ public class ToolShedController : BaseEnemyController
     bool keepShooting = true;
 
     private bool skillActive = false;
+    private bool waitForLoad = false;
+
+    [SerializeField]
+    HealthController healthbar;
 
     private void Start()
     {
@@ -37,6 +41,7 @@ public class ToolShedController : BaseEnemyController
         HideCone();
         rippleMask.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
+        waitForLoad = true;
         StartCoroutine(waitPlease(2.0f));
         //_animator = GetComponent<Animator>();
 
@@ -47,13 +52,13 @@ public class ToolShedController : BaseEnemyController
     {
         yield return new WaitForSeconds(wait);
         _animator = GetComponent<Animator>();
-
         meleeAttack = new RakeAttack();
+        waitForLoad = false;
     }
 
     private void FixedUpdate()
     {
-        if (!skillActive)
+        if (!skillActive && !waitForLoad)
         {
             float distance = Vector3.Distance(player.transform.position, transform.position);
 
@@ -80,6 +85,7 @@ public class ToolShedController : BaseEnemyController
             if (!meleeHit)
             {
                 player.GetComponent<BasePlayer>().ReduceHealth(meleeDamage);
+                
                 print("Player got hit by: ToolShed Melee Skill");
                 meleeHit = true;
             }

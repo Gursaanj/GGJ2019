@@ -9,6 +9,8 @@ public class TransitionManager : MonoBehaviour {
     [SerializeField]
     BaseEnemyController deadCharacter;
 
+
+
 	// Use this for initialization
 	void Start () {
         deadCharacter.onDeathDelegate += startTransition;
@@ -42,8 +44,6 @@ public class TransitionManager : MonoBehaviour {
 
     void changeScene()
     {
-        //TODO - Change to increment scene index
-        //.LoadScene(1);
         SceneManager.LoadScene(1);
     }
 }

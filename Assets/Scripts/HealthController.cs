@@ -15,17 +15,40 @@ public class HealthController : MonoBehaviour {
 
     private void Awake()
     {
-        currentLives = lives;
-        for (int i = 0; i < hearts.Length; i++)
+        if (PlayerPrefs.GetInt("lives", 0) != 0)
         {
-            bool isActive = i+1 <= lives;
-            hearts[i].SetActive(isActive);
+            currentLives = PlayerPrefs.GetInt("lives");
+            for (int i = 0; i < hearts.Length; i++)
+            {
+                bool isActive = i + 1 <= lives;
+                hearts[i].SetActive(isActive);
+            }
+        }
+        else
+        {
+            currentLives = lives;
+            for (int i = 0; i < hearts.Length; i++)
+            {
+                bool isActive = i + 1 <= lives;
+                hearts[i].SetActive(isActive);
+            }
         }
     }
+   
 
+    public void incremeantHearts()
+    {
+        currentLives++;
+        hearts[currentLives].SetActive(true);
+        lives = currentLives;
+        PlayerPrefs.SetInt("lives", lives);
+    }
     public void decremeantHearts()
     {
         currentLives--;
+        currentLives = Mathf.Clamp(currentLives - 1, 0, lives);
         hearts[currentLives].SetActive(false);
+        lives = currentLives;
+        PlayerPrefs.SetInt("lives", lives);
     }
 }

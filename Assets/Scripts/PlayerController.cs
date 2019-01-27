@@ -36,6 +36,9 @@ public class PlayerController : BasePlayer {
     DashState dashState;
     float dashTimer = 0;
 
+    [SerializeField]
+    HealthController healthbar;
+
 
     private void Awake()
     {
@@ -197,7 +200,7 @@ public class PlayerController : BasePlayer {
 
     protected override void updateHealthbar()
     {
-        //TODO - Update the heart
+        healthbar.decremeantHearts();
     }
 
     protected override void onDeath()

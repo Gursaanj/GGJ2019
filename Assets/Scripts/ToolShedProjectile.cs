@@ -23,6 +23,7 @@ public class ToolShedProjectile : Projectile
         if (tag == "Player")
         {
             collision.gameObject.GetComponent<BasePlayer>().ReduceHealth(damage);
+            Debug.Log("Hit you Mf");
         }
 
         disableIfNeeded(tag);
