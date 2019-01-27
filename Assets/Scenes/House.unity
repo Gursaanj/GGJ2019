@@ -984,11 +984,6 @@ Prefab:
       propertyPath: background
       value: 
       objectReference: {fileID: 1315600821}
-    - target: {fileID: 20827165329089408, guid: 8bc0e1ec8040e4806a40192fdbbfe417,
-        type: 2}
-      propertyPath: orthographic size
-      value: 8.725765
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc0e1ec8040e4806a40192fdbbfe417, type: 2}
   m_IsPrefabAsset: 0
