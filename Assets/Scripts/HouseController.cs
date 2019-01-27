@@ -26,6 +26,7 @@ public class HouseController : BaseEnemyController
 
     private bool meleeHit;
     private bool skillActive;
+    private bool isDead;
     
     private Animator _animator;
     private PolygonCollider2D warningCollider;
@@ -41,6 +42,9 @@ public class HouseController : BaseEnemyController
 
     private void FixedUpdate()
     {
+        if (isDead)
+            return;
+        
         if (!skillActive)
         {
             float distance = Vector3.Distance(player.transform.position, transform.position);
@@ -89,10 +93,26 @@ public class HouseController : BaseEnemyController
             if (!meleeHit)
             {
                 player.GetComponent<BasePlayer>().ReduceHealth(meleeDamage);
-                print("Player got hit by: ToolShed Melee Skill");
+                print("Player got hit by: House Melee Skill");
                 meleeHit = true;
             }
         }
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isDead)
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            base.onDeathDelegate();
+        }
+    }
+    
+    protected override void onDeath()
+    {
+        isDead = true;
+        _animator.SetTrigger("Death");
     }
 
     protected override void MeleeAttack()
@@ -108,7 +128,7 @@ public class HouseController : BaseEnemyController
         Color oldColor = warning.color;
         warning.color = new Color(oldColor.r, oldColor.g, oldColor.b, 1f);
         
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1f);
         
         HideWarning();
     }
@@ -125,7 +145,7 @@ public class HouseController : BaseEnemyController
     
     private IEnumerator MeleeDone()
     {
-        yield return new WaitForSeconds(3.4f);
+        yield return new WaitForSeconds(2.4f);
         
         mask.SetActive(false);
         skillActive = false;

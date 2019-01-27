@@ -34,6 +34,7 @@
           <e p="ToolShedProjectile.cs" t="Include" />
           <e p="TransitionManager.cs" t="Include" />
         </e>
+        <e p="StartGameController.cs" t="Include" />
       </e>
       <e p="GGJ2019.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
