@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 041098ad411564a2b82dcb67f7fceaa7
+guid: 197ce87f62a7a4f269a88b9ed95c9793
 TextureImporter:
   fileIDToRecycleName:
-    21300000: HouseGarageOpen_0
-    21300002: HouseGarageOpen_1
-    21300004: HouseGarageOpen_2
-    21300006: HouseGarageOpen_3
-    21300008: HouseGarageOpen_4
-    21300010: HouseGarageOpen_5
+    21300000: HouseGarageClose_0
+    21300002: HouseGarageClose_1
+    21300004: HouseGarageClose_2
+    21300006: HouseGarageClose_3
+    21300008: HouseGarageClose_4
+    21300010: HouseGarageClose_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -90,7 +90,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HouseGarageOpen_0
+      name: HouseGarageClose_0
       rect:
         serializedVersion: 2
         x: 0
@@ -104,13 +104,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e5f97b3e894644d4a1499c9b03a68cd
+      spriteID: d5a6c57a0718f44adbc8455272292872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseGarageOpen_1
+      name: HouseGarageClose_1
       rect:
         serializedVersion: 2
         x: 1200
@@ -124,13 +124,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f9e366f543e14de2873909d5c0f26d7
+      spriteID: d42e1bc03aa9145e090c2489a6c30cb6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseGarageOpen_2
+      name: HouseGarageClose_2
       rect:
         serializedVersion: 2
         x: 0
@@ -144,13 +144,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfe9f7869ea614f1b84f902e7e863c66
+      spriteID: 57a149d90eadb4e4ea1a233ca02f3809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseGarageOpen_3
+      name: HouseGarageClose_3
       rect:
         serializedVersion: 2
         x: 1200
@@ -164,13 +164,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb1b3f7eb53b2450db79d52aef5060d7
+      spriteID: f941cceada55244938de5a1983021051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseGarageOpen_4
+      name: HouseGarageClose_4
       rect:
         serializedVersion: 2
         x: 0
@@ -184,13 +184,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0e506d71bf0a4fb1aa4d97711bdc695
+      spriteID: 7c511b6264e0c4d4e9d107480ddb99af
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseGarageOpen_5
+      name: HouseGarageClose_5
       rect:
         serializedVersion: 2
         x: 1200
@@ -204,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ac65668d8a42484897a1b71a66af5c1
+      spriteID: 2eb7f3431e67242bfaaeb94e360da8d1
       vertices: []
       indices: 
       edges: []
@@ -212,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8dd8e23445e6747f0a720f4aa06df137
+    spriteID: d694f1e291e82456fb66158cd2442c60
     vertices: []
     indices: 
     edges: []

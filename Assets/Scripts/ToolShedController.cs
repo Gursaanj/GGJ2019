@@ -72,7 +72,7 @@ public class ToolShedController : BaseEnemyController
                 
                 if (r == 0)
                     RangedAttack();
-            }            
+            }
         }
     }
 
