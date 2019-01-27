@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class ToolShedController : BaseEnemyController
 {
-    private GameObject player;
     private Animator _animator;
     
     private SkillAttack meleeAttack;
@@ -69,7 +68,7 @@ public class ToolShedController : BaseEnemyController
                 
                 if (r == 0)
                     RangedAttack();
-            }            
+            }
         }
     }
 
@@ -80,7 +79,7 @@ public class ToolShedController : BaseEnemyController
             if (!meleeHit)
             {
                 player.GetComponent<BasePlayer>().ReduceHealth(meleeDamage);
-                print("Player got hit by: ToolShed Melee Skill");
+                print("Player got hit by: House Melee Skill");
                 meleeHit = true;
             }
         }
