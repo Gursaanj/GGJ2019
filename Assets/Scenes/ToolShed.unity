@@ -683,6 +683,14 @@ Prefab:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4504779781289704, guid: fc3547c31d0d4d049a5c805842610a8f, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504779781289704, guid: fc3547c31d0d4d049a5c805842610a8f, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc3547c31d0d4d049a5c805842610a8f, type: 2}
   m_IsPrefabAsset: 0
@@ -750,7 +758,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.06666667, y: 0.13333334}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 0.06666667, y: 0.13333334}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -833,7 +841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1900077238
 MonoBehaviour:
   m_ObjectHideFlags: 0

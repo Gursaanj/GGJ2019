@@ -95,6 +95,7 @@ void setupCoolDownTime()
         if (Input.GetMouseButtonDown(1))
         {
             //TODO Melee function
+            GetComponent<Animator>().SetTrigger("Attack");
         }
     }
 
