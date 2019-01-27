@@ -21,7 +21,6 @@ public class StartGameController : MonoBehaviour {
     {
         if(Input.anyKeyDown)
         {
-            //TODO - Change Scenes
             SceneManager.LoadScene(1);
         }
     }
