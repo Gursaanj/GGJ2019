@@ -6,11 +6,6 @@ using UnityEngine;
 /// </summary>
 public abstract class BaseEnemyController : BasePlayer
 {
-    public SkillAttack[] possibleSkills;
-    
-    // Queue of skill attacks
-    protected Queue<SkillAttack> queuedSkillAttacks;
-
     /// <summary>
     /// Use to call skill attacks
     /// </summary>

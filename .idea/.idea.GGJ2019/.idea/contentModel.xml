@@ -20,7 +20,6 @@
             <e p="CardBoardController.cs" t="Include" />
             <e p="RakeAttack.cs" t="Include" />
             <e p="SkillAttack.cs" t="Include" />
-            <e p="ToolshedEnemyController.cs" t="Include" />
           </e>
           <e p="InputManager.cs" t="Include" />
           <e p="IPooledObject.cs" t="Include" />

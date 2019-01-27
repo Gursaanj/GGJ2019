@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public enum SkillType
 {
@@ -7,7 +8,8 @@ public enum SkillType
     CrowdControl = 2
 }
 
-public abstract class SkillAttack : MonoBehaviour
+[Serializable]
+public abstract class SkillAttack
 {
     public SkillType skillType;
     
