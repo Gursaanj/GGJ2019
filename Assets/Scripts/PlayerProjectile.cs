@@ -8,8 +8,17 @@ public class PlayerProjectile : Projectile {
 
     protected override void movementPerFrame()
     {
-
+        
+        transform.position += transform.up * Time.deltaTime * base.speed;
+        // delete when properly pooled 
+        //StartCoroutine(timeToDie(0.5f));
     }
+
+    //IEnumerator timeToDie(float wait)
+    //{
+    //    yield return new WaitForSeconds(wait);
+    //    Destroy(gameObject);
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +26,7 @@ public class PlayerProjectile : Projectile {
         if (tag == "Enemy")
         {
             //TODO - pass in damage
+            collision.gameObject.GetComponent<BasePlayer>().ReduceHealth(damage);
         }
 
         disableIfNeeded(tag);

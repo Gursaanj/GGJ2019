@@ -34,7 +34,6 @@ public class BasePlayer : MonoBehaviour {
     protected bool _isRangeOnCoolDown = false;
     protected bool _isDodgeOnCoolDown = false;
 
-
     private Rigidbody2D  playerRigidbody;
 
     // Use this for initialization
@@ -43,14 +42,14 @@ public class BasePlayer : MonoBehaviour {
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
-	
-    void setupCoolDownTime()
-    {
-        meleeCurrentCoolDownTime = _meleeCooldownTime;
-        rangeCurrentCoolDownTime = _RangeCooldownTime;
-        dodgeCurrentCoolDownTime = _DodgeCooldownTime;
-    }
 
+	// Update is called once per frame
+void setupCoolDownTime()
+{
+    meleeCurrentCoolDownTime = _meleeCooldownTime;
+    rangeCurrentCoolDownTime = _RangeCooldownTime;
+    dodgeCurrentCoolDownTime = _DodgeCooldownTime;
+}
     // Update is called once per frame
     void FixedUpdate () {
         Move();
@@ -83,6 +82,11 @@ public class BasePlayer : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             //TODO - Shoot function
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            float xChange = worldPosition.x - transform.position.x;
+            float yChange = worldPosition.y - transform.position.y;
+            float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
+            PlayerProjectile Shot = ObjectPooler.Instance.SpawnFromPool("Bullet", transform.position, Quaternion.Euler(0, 0, angle - 90)).GetComponent<PlayerProjectile>();
         }
     }
 
