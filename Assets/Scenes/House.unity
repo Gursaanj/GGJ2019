@@ -379,6 +379,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d4e22b21d0b44bd9b1a88d642a6ce85, type: 2}
   m_IsPrefabAsset: 0
+--- !u!224 &508469228 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224623021539365194, guid: 6d4e22b21d0b44bd9b1a88d642a6ce85,
+    type: 2}
+  m_PrefabInternal: {fileID: 508469227}
 --- !u!224 &615746999 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224517006057586046, guid: 637174736b6b9485fbdb59567f0b469a,
@@ -493,6 +498,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1129564023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114159885848096060, guid: 6d4e22b21d0b44bd9b1a88d642a6ce85,
+    type: 2}
+  m_PrefabInternal: {fileID: 508469227}
+  m_Script: {fileID: 11500000, guid: fd8f3e77c567746f9aebb748ad2eba96, type: 3}
 --- !u!1001 &1260860773
 Prefab:
   m_ObjectHideFlags: 0
@@ -750,7 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 7
-  _health: 100
+  _health: 3
   _meleeCooldownTime: 0.5
   _RangeCooldownTime: 0.5
   _DashCoolDownTime: 0.3

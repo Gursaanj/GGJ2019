@@ -268,8 +268,8 @@ MonoBehaviour:
   healthBar: {fileID: 1546791870}
   meleeChance: 0.05
   rangedChance: 0.02
-  meleeDamage: 0
-  rangedDamage: 0
+  meleeDamage: 1
+  rangedDamage: 1
   cone: {fileID: 1380091052}
   rippleMask: {fileID: 942963404}
   ripple: {fileID: 1060312729}

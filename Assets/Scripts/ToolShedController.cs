@@ -11,8 +11,8 @@ public class ToolShedController : BaseEnemyController
     public float meleeChance;
     public float rangedChance;
 
-    public int meleeDamage;
-    public int rangedDamage;
+    public int meleeDamage = 1;
+    public int rangedDamage = 1;
 
     private bool meleeHit;
 
