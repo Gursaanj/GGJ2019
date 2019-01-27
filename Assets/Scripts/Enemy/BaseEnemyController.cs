@@ -4,8 +4,11 @@ using UnityEngine;
 /// <summary>
 /// Enemy can only have one of each SkillType attack
 /// </summary>
-public abstract class BaseEnemyController : MonoBehaviour
+public abstract class BaseEnemyController : BasePlayer
 {
+    public delegate void EnemyDelegate();
+    public EnemyDelegate onDeathDelegate;
+
     public SkillAttack[] possibleSkills;
     
     // Queue of skill attacks
@@ -29,7 +32,8 @@ public abstract class BaseEnemyController : MonoBehaviour
                 break;
         }
     }
-    
+
+
     protected virtual void MeleeAttack()
     {
         

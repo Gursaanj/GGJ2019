@@ -208,4 +208,10 @@ void setupCoolDownTime()
         Cooldown
     }
 
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
 }
