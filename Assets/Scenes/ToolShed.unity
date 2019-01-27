@@ -694,6 +694,11 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
+        type: 2}
+      propertyPath: _meleeCooldownTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc3547c31d0d4d049a5c805842610a8f, type: 2}
   m_IsPrefabAsset: 0
