@@ -703,7 +703,7 @@ MonoBehaviour:
   _health: 100
   _meleeCooldownTime: 0.5
   _RangeCooldownTime: 0.5
-  _DashCoolDownTime: 1
+  _DashCoolDownTime: 0.3
   _meleeDamage: 10
   attackRange: 1.3
   maxDash: 3
