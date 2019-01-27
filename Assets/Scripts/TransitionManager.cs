@@ -17,13 +17,13 @@ public class TransitionManager : MonoBehaviour {
 
 
     void startTransition()
-    { 
+    {
         StartCoroutine(fadeOutScene());
     }
 
     IEnumerator fadeOutScene()
     {
-        for (float i = 0; i <= 1f; i += 0.2f) { 
+        for (float i = 0; i <= 1f; i += 0.2f) {
             yield return new WaitForSeconds(0.1f);
             GetComponent<Image>().color = new Color(0, 0, 0, i);
         }
@@ -42,8 +42,7 @@ public class TransitionManager : MonoBehaviour {
 
     void changeScene()
     {
-        //TODO - Change to increment scene index
-        //.LoadScene(1);
-        SceneManager.LoadScene(1);
+        int num = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(num);
     }
 }

@@ -14,14 +14,17 @@ public abstract class BaseEnemyController : BasePlayer
 
     protected GameObject player;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        onStart();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     protected override void updateHealthbar()
     {
-        healthBar.transform.localScale = new Vector3(_health / base._maxHealth, 1, 1);
+        Debug.Log((_health / _maxHealth));
+        healthBar.localScale = new Vector3((_health / _maxHealth), 1, 1);
     }
 
     protected override void onDeath()
