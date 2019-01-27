@@ -11,7 +11,9 @@ public class BasePlayer : MonoBehaviour {
     public float _RangeCooldownTime = 5.0f;
     private bool _DodgeCooldown = false;
     public float _DodgeCooldownTime = 5.0f;
-    private Rigidbody2D  playerRigidbody;
+    private Rigidbody2D playerRigidbody;
+    public GameObject bullet;
+    public Transform baseTrans;
 
 
     // Use this for initialization
@@ -28,7 +30,12 @@ public class BasePlayer : MonoBehaviour {
     
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            float xChange = worldPosition.x - baseTrans.position.x;
+            float yChange = worldPosition.y - baseTrans.position.y;
+            float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
+            Debug.Log(angle);
+            Shoot(angle);
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -50,9 +57,12 @@ public class BasePlayer : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    private void Shoot()
+    private void Shoot(float angle)
     {
-      // todo Shoot
+        // todo Shoot
+        PlayerProjectile Shot = ObjectPooler.Instance.SpawnFromPool("Bullet", transform.position, Quaternion.Euler(0, 0, angle - 90)).GetComponent<PlayerProjectile>();
+        //Instantiate(bullet, baseTrans.position, Quaternion.Euler(0, 0, angle - 90)).GetComponent<PlayerProjectile>();
+        //Debug.Log(transform.position);
     }
 
     private void Melee()

@@ -217,7 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e200937b9bc434dfb9d372bc0ff3bed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools: []
+  pools:
+  - tag: Bullet
+    prefab: {fileID: 1106480902677302, guid: 98e4365560e0840b78ee0f2b4c91325d, type: 2}
+    size: 6
 --- !u!4 &860707934
 Transform:
   m_ObjectHideFlags: 0
@@ -273,8 +276,19 @@ Prefab:
     - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
       propertyPath: _speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
+        type: 2}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1106480902677302, guid: 98e4365560e0840b78ee0f2b4c91325d,
+        type: 2}
+    - target: {fileID: 114936412674436920, guid: fc3547c31d0d4d049a5c805842610a8f,
+        type: 2}
+      propertyPath: baseTrans
+      value: 
+      objectReference: {fileID: 1266848266}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc3547c31d0d4d049a5c805842610a8f, type: 2}
   m_IsPrefabAsset: 0
@@ -296,10 +310,40 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!61 &1266848263
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1266848261}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
+--- !u!4 &1266848266 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4504779781289704, guid: fc3547c31d0d4d049a5c805842610a8f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1266848260}
