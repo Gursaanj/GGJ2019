@@ -360,19 +360,24 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224623021539365194, guid: 6d4e22b21d0b44bd9b1a88d642a6ce85,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d4e22b21d0b44bd9b1a88d642a6ce85, type: 2}
   m_IsPrefabAsset: 0
+--- !u!224 &508469228 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224623021539365194, guid: 6d4e22b21d0b44bd9b1a88d642a6ce85,
+    type: 2}
+  m_PrefabInternal: {fileID: 508469227}
 --- !u!224 &615746999 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224517006057586046, guid: 637174736b6b9485fbdb59567f0b469a,
     type: 2}
   m_PrefabInternal: {fileID: 1260860773}
---- !u!224 &850461148 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224926143400053388, guid: 6d4e22b21d0b44bd9b1a88d642a6ce85,
-    type: 2}
-  m_PrefabInternal: {fileID: 508469227}
 --- !u!1 &860707932
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +487,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1129564023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114159885848096060, guid: 6d4e22b21d0b44bd9b1a88d642a6ce85,
+    type: 2}
+  m_PrefabInternal: {fileID: 508469227}
+  m_Script: {fileID: 11500000, guid: fd8f3e77c567746f9aebb748ad2eba96, type: 3}
 --- !u!1001 &1260860773
 Prefab:
   m_ObjectHideFlags: 0
@@ -739,7 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 7
-  _health: 100
+  _health: 3
   _meleeCooldownTime: 0.5
   _RangeCooldownTime: 0.5
   _DashCoolDownTime: 0.3
@@ -747,7 +758,7 @@ MonoBehaviour:
   attackRange: 1.3
   maxDash: 3
   dashMultiplier: 3
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 1129564023}
 --- !u!4 &1315600821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4497667987441846, guid: 44d32cd0a537e43bcaa90e7e233b7cae,
@@ -938,7 +949,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 615746999}
-  - {fileID: 850461148}
+  - {fileID: 508469228}
   - {fileID: 145028001}
   m_Father: {fileID: 0}
   m_RootOrder: 5

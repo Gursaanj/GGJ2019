@@ -36,6 +36,7 @@ public class PlayerController : BasePlayer {
     [SerializeField]
     HealthController healthbar;
 
+    bool isAlive = true;
 
     protected override void Awake()
     {
@@ -54,11 +55,13 @@ public class PlayerController : BasePlayer {
 
     private void FixedUpdate()
     {
-        Shoot();
-        Melee();
-        Dashing();
-        Move();
-        CoolDown();
+        if (isAlive) { 
+            Shoot();
+            Melee();
+            Dashing();
+            Move();
+            CoolDown();
+        }
     }
 
     #region Dashing
@@ -178,6 +181,8 @@ public class PlayerController : BasePlayer {
 
     protected override void onDeath()
     {
-        //TODO - Destroy gameobject?
+        characterRigidBody.velocity = Vector2.zero;
+        GetComponent<Animator>().SetTrigger("Death");
+        isAlive = false;
     }
 }

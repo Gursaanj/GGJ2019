@@ -30,6 +30,7 @@ public abstract class BasePlayer : MonoBehaviour {
     {
         _health = Mathf.Max(0, _health - damage);
         updateHealthbar();
+        Debug.Log("Health :" + _health);
         if (_health <= 0)
         {
             onDeath();
