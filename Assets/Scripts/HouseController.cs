@@ -13,12 +13,10 @@ public class HouseController : BaseEnemyController
 
     public GameObject mask;
     public SpriteRenderer warning;
-    public GameObject carPrefab;
     public Transform doorTransform;
     public float meleeDistance;
     
     public int meleeDamage;
-    public int rangedDamage;
 
     public float ccChance;
     public float meleeChance;
@@ -112,7 +110,7 @@ public class HouseController : BaseEnemyController
     protected override void onDeath()
     {
         isDead = true;
-        _animator.SetTrigger("Death");
+        _animator.SetTrigger(DEATH);
     }
 
     protected override void MeleeAttack()
@@ -138,7 +136,7 @@ public class HouseController : BaseEnemyController
         Color oldColor = warning.color;
         warning.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0f);
         
-        warningCollider.enabled = false;
+        warningCollider.enabled = true;
         mask.SetActive(true);
         meleeHit = false;
     }
