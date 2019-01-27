@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class ToolShedController : BaseEnemyController
 {
-    private GameObject player;
     private Animator _animator;
     
     private SkillAttack meleeAttack;
@@ -71,7 +70,7 @@ public class ToolShedController : BaseEnemyController
                 
                 if (r == 0)
                     RangedAttack();
-            }            
+            }
         }
     }
 

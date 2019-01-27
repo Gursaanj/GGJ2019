@@ -1,13 +1,18 @@
 fileFormatVersion: 2
-guid: 041098ad411564a2b82dcb67f7fceaa7
+guid: b243dd9ee8f4c4f339bb0b1b195442fa
 TextureImporter:
   fileIDToRecycleName:
-    21300000: HouseGarageOpen_0
-    21300002: HouseGarageOpen_1
-    21300004: HouseGarageOpen_2
-    21300006: HouseGarageOpen_3
-    21300008: HouseGarageOpen_4
-    21300010: HouseGarageOpen_5
+    21300000: HouseLights_0
+    21300002: HouseLights_1
+    21300004: HouseLights_2
+    21300006: HouseLights_3
+    21300008: HouseLights_4
+    21300010: HouseLights_5
+    21300012: HouseLights_6
+    21300014: HouseLights_7
+    21300016: HouseLights_8
+    21300018: HouseLights_9
+    21300020: HouseLights_10
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -90,7 +95,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HouseGarageOpen_0
+      name: HouseLights_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 1200
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44175125be292485d83a39e4a8c51c0c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseLights_1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 3000
+        width: 1200
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41eeab74748640a4868c5d4e9104ebc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseLights_2
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3000
+        width: 1200
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c9586e240a54723b46d9da50fdcc0b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseLights_3
       rect:
         serializedVersion: 2
         x: 0
@@ -104,13 +169,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e5f97b3e894644d4a1499c9b03a68cd
+      spriteID: 4b100eebcd1eb4025acf3d7e8b45d7db
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseGarageOpen_1
+      name: HouseLights_4
       rect:
         serializedVersion: 2
         x: 1200
@@ -124,13 +189,33 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f9e366f543e14de2873909d5c0f26d7
+      spriteID: 6815c51b3f18a4ae1a727e6eecd2a158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseGarageOpen_2
+      name: HouseLights_5
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2000
+        width: 1200
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a9a378f23464c38a67c12ffb44d26d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseLights_6
       rect:
         serializedVersion: 2
         x: 0
@@ -144,13 +229,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfe9f7869ea614f1b84f902e7e863c66
+      spriteID: 1e44d31ac27484ad8a44557dad663237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseGarageOpen_3
+      name: HouseLights_7
       rect:
         serializedVersion: 2
         x: 1200
@@ -164,13 +249,33 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb1b3f7eb53b2450db79d52aef5060d7
+      spriteID: 16e80599dd40d4cf589c833d6a063175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseGarageOpen_4
+      name: HouseLights_8
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1000
+        width: 1200
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12ded8dfa58a4e9284f89be453ef79d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HouseLights_9
       rect:
         serializedVersion: 2
         x: 0
@@ -184,13 +289,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0e506d71bf0a4fb1aa4d97711bdc695
+      spriteID: a84e674b9ebf04b039188d34011888ba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HouseGarageOpen_5
+      name: HouseLights_10
       rect:
         serializedVersion: 2
         x: 1200
@@ -204,7 +309,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ac65668d8a42484897a1b71a66af5c1
+      spriteID: 0500400d13f24459aab826bc13c64fd6
       vertices: []
       indices: 
       edges: []
@@ -212,7 +317,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8dd8e23445e6747f0a720f4aa06df137
+    spriteID: e6c78814088fd49229163fae4d99ca36
     vertices: []
     indices: 
     edges: []
