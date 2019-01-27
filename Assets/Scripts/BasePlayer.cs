@@ -104,6 +104,8 @@ void setupCoolDownTime()
         playerRigidbody.velocity = (Vector3.Normalize(direction) * _speed);
     }
 
+
+    #region CoolDown
     private void CoolDown()
     {
         if (_isMeleeOnCoolDown)
@@ -136,4 +138,6 @@ void setupCoolDownTime()
             }
         }
     }
+    #endregion
+
 }

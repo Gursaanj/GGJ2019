@@ -4,5 +4,26 @@ using UnityEngine;
 
 public class ToolShedController : BasePlayer {
 
-	
+    Vector3 playerDestination;
+
+    private void Update()
+    {
+        playerDestination = GameObject.FindGameObjectWithTag("Player").transform.position;
+    }
+
+
+    protected override void Shoot()
+    {
+        if (!_isRangeOnCoolDown) {
+
+            float xChange = playerDestination.x - transform.position.x;
+            float yChange = playerDestination.y - transform.position.y;
+            float angle = Mathf.Atan2(yChange, xChange) * Mathf.Rad2Deg;
+
+
+            ObjectPooler.Instance.SpawnFromPool("EnemyBullet", transform.position, Quaternion.Euler(0, 0, angle - 90));
+            _isRangeOnCoolDown = true;
+        }
+    }
+
 }

@@ -152,6 +152,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 212941505001934874, guid: 44d32cd0a537e43bcaa90e7e233b7cae,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1567264233
+      objectReference: {fileID: 0}
+    - target: {fileID: 212941505001934874, guid: 44d32cd0a537e43bcaa90e7e233b7cae,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315486283204332, guid: 44d32cd0a537e43bcaa90e7e233b7cae, type: 2}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104963116492914, guid: 44d32cd0a537e43bcaa90e7e233b7cae, type: 2}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234354268354708, guid: 44d32cd0a537e43bcaa90e7e233b7cae, type: 2}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1384109339977374, guid: 44d32cd0a537e43bcaa90e7e233b7cae, type: 2}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44d32cd0a537e43bcaa90e7e233b7cae, type: 2}
   m_IsPrefabAsset: 0
@@ -235,7 +261,7 @@ MonoBehaviour:
   healthBar: {fileID: 615746999}
   _health: 100
   _meleeCooldownTime: 5
-  _RangeCooldownTime: 5
+  _RangeCooldownTime: 1
   _DodgeCooldownTime: 5
   _meleeDamage: 10
 --- !u!212 &400408556
@@ -270,7 +296,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1283240835
+  m_SortingLayerID: -1441754935
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 68c5f23a74fab40fe9e0a78944d702c9, type: 3}
@@ -480,7 +506,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e200937b9bc434dfb9d372bc0ff3bed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools: []
+  pools:
+  - tag: Bullet
+    prefab: {fileID: 1106480902677302, guid: 98e4365560e0840b78ee0f2b4c91325d, type: 2}
+    size: 5
+  - tag: EnemyBullet
+    prefab: {fileID: 1824793660480678, guid: 29b4fc113cd6542349c08db559e1a4ea, type: 2}
+    size: 5
 --- !u!4 &860707934
 Transform:
   m_ObjectHideFlags: 0
@@ -644,7 +676,7 @@ Prefab:
     - target: {fileID: 212049503014055332, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
       propertyPath: m_SortingLayerID
-      value: 1283240835
+      value: -1441754935
       objectReference: {fileID: 0}
     - target: {fileID: 212049503014055332, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
