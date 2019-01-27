@@ -10,15 +10,15 @@ public class PlayerController : BasePlayer {
     [SerializeField]
     float _RangeCooldownTime = 0.5f;
     [SerializeField]
-    float _DodgeCooldownTime = 0.5f;
+    float _DashCoolDownTime = 0.5f;
 
     float meleeCurrentCoolDownTime;
     float rangeCurrentCoolDownTime;
-    float dodgeCurrentCoolDownTime;
+    float dashCurrentCoolDownTime;
 
      bool _isMeleeOnCoolDown = false;
      bool _isRangeOnCoolDown = false;
-     bool _isDodgeOnCoolDown = false;
+     bool _isDashOnCoolDown = false;
 
     [Header("Damage")]
     [SerializeField]
@@ -47,7 +47,7 @@ public class PlayerController : BasePlayer {
     {
         meleeCurrentCoolDownTime = _meleeCooldownTime;
         rangeCurrentCoolDownTime = _RangeCooldownTime;
-        dodgeCurrentCoolDownTime = _DodgeCooldownTime;
+        dashCurrentCoolDownTime = _DashCoolDownTime;
     }
 
 
@@ -61,39 +61,21 @@ public class PlayerController : BasePlayer {
     }
 
     #region Dashing
-    private void Dashing()
+    void Dashing()
     {
-        switch (dashState)
+        if (InputManager.isDashing() && !_isDashOnCoolDown)
         {
-            case DashState.Ready:
-                var isDashKeyDown = Input.GetKeyDown(KeyCode.LeftShift);
-                if (isDashKeyDown)
-                {
-                    _speed *= dashMultiplier;
-                    //Isdodging = true;
-                    dashState = DashState.Dashing;
-                }
-                break;
-            case DashState.Dashing:
-                dashTimer += Time.deltaTime * 6;
-                if (dashTimer >= maxDash)
-                {
-                    dashTimer = maxDash;
-                    //Isdodging = false;
-                    _speed /= dashMultiplier;
-                    dashState = DashState.Cooldown;
-                }
-                break;
-            case DashState.Cooldown:
-                dashTimer -= Time.deltaTime;
-                if (dashTimer <= 0)
-                {
-                    dashTimer = 0;
-                    dashState = DashState.Ready;
-                }
-                break;
+            Vector3 last = InputManager.lastPosition;
+            GetComponent<SpriteRenderer>().flipX = last.x < 0;
+            
+            transform.Translate(last * dashMultiplier);
+            string animName = (last.y != 0) ? "DashVert" : "DashHori";
+            GetComponent<Animator>().SetTrigger(animName);
+
+            _isDashOnCoolDown = true;
         }
     }
+
     #endregion
 
     #region Shooting
@@ -170,13 +152,13 @@ public class PlayerController : BasePlayer {
             }
         }
 
-        if (_isDodgeOnCoolDown)
+        if (_isDashOnCoolDown)
         {
-            dodgeCurrentCoolDownTime -= Time.fixedDeltaTime;
-            if (dodgeCurrentCoolDownTime <= 0)
+            dashCurrentCoolDownTime -= Time.fixedDeltaTime;
+            if (dashCurrentCoolDownTime <= 0)
             {
-                _isDodgeOnCoolDown = false;
-                dodgeCurrentCoolDownTime = _DodgeCooldownTime;
+                _isDashOnCoolDown = false;
+                dashCurrentCoolDownTime = _DashCoolDownTime;
             }
         }
     }
