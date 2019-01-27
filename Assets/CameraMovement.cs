@@ -29,16 +29,16 @@ public class CameraMovement : MonoBehaviour {
 
     void Update()
     {
+        if (target != null) { 
+            var pos = new Vector3(target.position.x, target.position.y, transform.position.z);
+            pos.x = Mathf.Clamp(pos.x, leftBound, rightBound);
+            pos.y = Mathf.Clamp(pos.y, bottomBound, topBound);
+            Vector3 cameraPosition = pos;
 
-        var pos = new Vector3(target.position.x, target.position.y, transform.position.z);
-        pos.x = Mathf.Clamp(pos.x, leftBound, rightBound);
-        pos.y = Mathf.Clamp(pos.y, bottomBound, topBound);
-        Vector3 cameraPosition = pos;
-
-        transform.position = Vector3.SmoothDamp(transform.position,
-                                                cameraPosition,
-                                                ref velocity,
-                                                smoothTime);
-
+            transform.position = Vector3.SmoothDamp(transform.position,
+                                                    cameraPosition,
+                                                    ref velocity,
+                                                    smoothTime);
+        }
     }
 }

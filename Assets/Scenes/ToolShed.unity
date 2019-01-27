@@ -261,7 +261,7 @@ MonoBehaviour:
   healthBar: {fileID: 615746999}
   _health: 100
   _meleeCooldownTime: 5
-  _RangeCooldownTime: 1
+  _RangeCooldownTime: 0.5
   _DodgeCooldownTime: 5
   _meleeDamage: 10
 --- !u!212 &400408556
@@ -512,7 +512,7 @@ MonoBehaviour:
     size: 5
   - tag: EnemyBullet
     prefab: {fileID: 1824793660480678, guid: 29b4fc113cd6542349c08db559e1a4ea, type: 2}
-    size: 5
+    size: 10
 --- !u!4 &860707934
 Transform:
   m_ObjectHideFlags: 0

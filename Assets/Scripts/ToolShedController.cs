@@ -5,16 +5,23 @@ using UnityEngine;
 public class ToolShedController : BasePlayer {
 
     Vector3 playerDestination;
+    bool keepShooting = true;
 
     private void Update()
     {
-        playerDestination = GameObject.FindGameObjectWithTag("Player").transform.position;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null) { 
+            playerDestination = player.transform.position;
+        } else {
+            keepShooting = false;
+        }
+
     }
 
 
     protected override void Shoot()
     {
-        if (!_isRangeOnCoolDown) {
+        if (!_isRangeOnCoolDown && keepShooting) {
 
             float xChange = playerDestination.x - transform.position.x;
             float yChange = playerDestination.y - transform.position.y;

@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class ToolShedProjectile : Projectile
 {
-    Vector3 destination;
     string[] blockade = { "Wall", "Player" };
 
     protected override void Update()
     {
-        destination = GameObject.FindGameObjectWithTag("Player").transform.position;
         base.Update();
     }
 
