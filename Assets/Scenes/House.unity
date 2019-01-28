@@ -181,7 +181,7 @@ Prefab:
     - target: {fileID: 212941505001934874, guid: 44d32cd0a537e43bcaa90e7e233b7cae,
         type: 2}
       propertyPath: m_Sprite
-      value:
+      value: 
       objectReference: {fileID: 21300000, guid: 701677d670e244fda9aedcd749cd43ea,
         type: 3}
     m_RemovedComponents: []
@@ -294,68 +294,9 @@ GameObject:
   m_PrefabInternal: {fileID: 312409300}
 --- !u!224 &312409302 stripped
 RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 145028000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1900077241}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &145028002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 145028000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &145028003
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 145028000}
-  m_CullTransparentMesh: 0
---- !u!114 &145028004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 145028000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb419c6151f18436ba1bf3816b50e898, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  deadCharacter: {fileID: 1954624330}
+  m_CorrespondingSourceObject: {fileID: 224426201614182876, guid: e5d97aaf4b5068643b3a9af3b102280a,
+    type: 2}
+  m_PrefabInternal: {fileID: 312409300}
 --- !u!224 &460367347 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224623021539365194, guid: 6d4e22b21d0b44bd9b1a88d642a6ce85,
@@ -481,6 +422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 538345531}
   - component: {fileID: 538345530}
+  - component: {fileID: 538345532}
   m_Layer: 0
   m_Name: Evil Music
   m_TagString: Untagged
@@ -596,6 +538,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &538345532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 538345529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaaa94d48ba321d4ea2da03d177295d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &615746999 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224517006057586046, guid: 637174736b6b9485fbdb59567f0b469a,
@@ -626,8 +579,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e200937b9bc434dfb9d372bc0ff3bed5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   pools:
   - tag: Bullet
     prefab: {fileID: 1106480902677302, guid: 98e4365560e0840b78ee0f2b4c91325d, type: 2}
@@ -748,12 +701,12 @@ Prefab:
     - target: {fileID: 114301710638566756, guid: fccf8af71d5e2483eaea13e94ed0cd16,
         type: 2}
       propertyPath: deadCharacter
-      value:
+      value: 
       objectReference: {fileID: 1954624330}
     - target: {fileID: 114301710638566756, guid: fccf8af71d5e2483eaea13e94ed0cd16,
         type: 2}
       propertyPath: Restart
-      value:
+      value: 
       objectReference: {fileID: 312409301}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fccf8af71d5e2483eaea13e94ed0cd16, type: 2}
@@ -789,8 +742,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -807,8 +760,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
@@ -1041,7 +994,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -1079,8 +1032,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a4f7163cdbf44938abc50bf5efe6b67, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   _speed: 7
   _health: 3
   _meleeCooldownTime: 0.5
@@ -1133,7 +1086,7 @@ Prefab:
     - target: {fileID: 114466316114793190, guid: b628187a9de0d4cb0b6d48e8fcca8f65,
         type: 2}
       propertyPath: healthBar
-      value:
+      value: 
       objectReference: {fileID: 615746999}
     - target: {fileID: 114466316114793190, guid: b628187a9de0d4cb0b6d48e8fcca8f65,
         type: 2}
@@ -1200,12 +1153,12 @@ Prefab:
     - target: {fileID: 114554448828807616, guid: 8bc0e1ec8040e4806a40192fdbbfe417,
         type: 2}
       propertyPath: target
-      value:
+      value: 
       objectReference: {fileID: 1266848265}
     - target: {fileID: 114554448828807616, guid: 8bc0e1ec8040e4806a40192fdbbfe417,
         type: 2}
       propertyPath: background
-      value:
+      value: 
       objectReference: {fileID: 1315600821}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc0e1ec8040e4806a40192fdbbfe417, type: 2}
@@ -1237,8 +1190,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -1253,8 +1206,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1

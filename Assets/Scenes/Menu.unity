@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
+  startMainMenu: 0
 --- !u!1 &537253601
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +387,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b8832f2e8fbe04e5b9063158f81dc7fc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.142
   m_Pitch: 1
   Loop: 1
   Mute: 0

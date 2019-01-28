@@ -90,7 +90,7 @@ public class PlayerController : BasePlayer {
     #region Shooting
     void Shoot()
     {
-        if (Input.GetMouseButtonDown(0) && !_isRangeOnCoolDown)
+        if (InputManager.isShooting() && !_isRangeOnCoolDown)
         {
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             float xChange = worldPosition.x - transform.position.x;
@@ -102,11 +102,10 @@ public class PlayerController : BasePlayer {
     }
     #endregion
 
-
     #region Melee
     void Melee()
     {
-        if (Input.GetMouseButtonDown(1) && !_isMeleeOnCoolDown)
+        if (InputManager.isMelee() && !_isMeleeOnCoolDown)
         {
             GetComponent<Animator>().SetTrigger("Attack");
             Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(transform.position, attackRange);

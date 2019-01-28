@@ -6,6 +6,12 @@ public static class InputManager {
 
     public static Vector3 lastPosition = Vector3.left;
 
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
+    private readonly static string platform = "_Windows";
+#else
+    private readonly static string platform = "_OSX";
+#endif
+
     public static float MainHorizontal()
     {
         float r = Input.GetAxis("Horizontal");
@@ -29,7 +35,19 @@ public static class InputManager {
     }
 
     public static bool isDashing()
-    { 
-        return Input.GetButtonDown("Dash");
+    {
+        return Input.GetButtonDown("Dash"+ platform);
+    }
+
+    public static bool isMelee()
+    {
+        float r = Input.GetAxis("Melee" + platform);
+        return r > 0 || Input.GetButtonDown("Melee_KB");
+    }
+    
+    public static bool isShooting()
+    {
+        float r = Input.GetAxis("Fire" + platform);
+        return r > 0 || Input.GetButtonDown("Fire_KB");
     }
 }

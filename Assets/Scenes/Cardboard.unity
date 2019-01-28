@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadCharacter: {fileID: 1548445326}
+  Restart: {fileID: 0}
 --- !u!1 &201413777
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 201413779}
   - component: {fileID: 201413778}
+  - component: {fileID: 201413780}
   m_Layer: 0
   m_Name: Evil Music
   m_TagString: Untagged
@@ -301,7 +303,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b7d9fd1a8760842f09462a1e204ff17d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.025
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -398,6 +400,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &201413780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 201413777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaaa94d48ba321d4ea2da03d177295d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &397949827
 Prefab:
   m_ObjectHideFlags: 0
@@ -711,7 +724,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1441754935
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300006, guid: 397bc631ecafb484e987c2f086e1ad6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

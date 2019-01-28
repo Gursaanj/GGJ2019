@@ -210,7 +210,7 @@ RectTransform:
   m_LocalScale: {x: 10.2886, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 1900077241}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -226,9 +226,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b3953e98f05f493a861ede841c91c6e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   speed: 0
+  startMainMenu: 0
 --- !u!114 &245470496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,8 +239,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -343,8 +344,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31c7f4f13a6084bc5942078419867b17, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   _speed: 0
   _health: 50
   healthBar: {fileID: 1546791870}
@@ -432,7 +433,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -461,8 +462,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e200937b9bc434dfb9d372bc0ff3bed5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   pools:
   - tag: Bullet
     prefab: {fileID: 1106480902677302, guid: 98e4365560e0840b78ee0f2b4c91325d, type: 2}
@@ -509,8 +510,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -527,8 +528,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
@@ -5522,12 +5523,12 @@ Prefab:
     - target: {fileID: 114554448828807616, guid: 8bc0e1ec8040e4806a40192fdbbfe417,
         type: 2}
       propertyPath: target
-      value:
+      value: 
       objectReference: {fileID: 1266848265}
     - target: {fileID: 114554448828807616, guid: 8bc0e1ec8040e4806a40192fdbbfe417,
         type: 2}
       propertyPath: background
-      value:
+      value: 
       objectReference: {fileID: 1315600821}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc0e1ec8040e4806a40192fdbbfe417, type: 2}
@@ -5632,12 +5633,12 @@ Prefab:
     - target: {fileID: 114301710638566756, guid: fccf8af71d5e2483eaea13e94ed0cd16,
         type: 2}
       propertyPath: deadCharacter
-      value:
+      value: 
       objectReference: {fileID: 400408555}
     - target: {fileID: 114301710638566756, guid: fccf8af71d5e2483eaea13e94ed0cd16,
         type: 2}
       propertyPath: Restart
-      value:
+      value: 
       objectReference: {fileID: 245470493}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fccf8af71d5e2483eaea13e94ed0cd16, type: 2}
@@ -5761,6 +5762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622149241}
   - component: {fileID: 1622149240}
+  - component: {fileID: 1622149242}
   m_Layer: 0
   m_Name: Evil Music
   m_TagString: Untagged
@@ -5876,6 +5878,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1622149242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1622149239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaaa94d48ba321d4ea2da03d177295d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1835791356
 Prefab:
   m_ObjectHideFlags: 0
@@ -5928,7 +5941,7 @@ Prefab:
     - target: {fileID: 114272875816331424, guid: fc3547c31d0d4d049a5c805842610a8f,
         type: 2}
       propertyPath: healthbar
-      value:
+      value: 
       objectReference: {fileID: 361971380}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc3547c31d0d4d049a5c805842610a8f, type: 2}
@@ -5960,8 +5973,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -5976,8 +5989,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -6021,6 +6034,7 @@ RectTransform:
   - {fileID: 1546791870}
   - {fileID: 1044191127}
   - {fileID: 1461726808}
+  - {fileID: 2141629486}
   - {fileID: 245470494}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -6130,3 +6144,8 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d97aaf4b5068643b3a9af3b102280a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!224 &2141629486 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224426201614182876, guid: e5d97aaf4b5068643b3a9af3b102280a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2141629485}
