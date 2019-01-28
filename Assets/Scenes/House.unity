@@ -178,6 +178,12 @@ Prefab:
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 212941505001934874, guid: 44d32cd0a537e43bcaa90e7e233b7cae,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 701677d670e244fda9aedcd749cd43ea,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44d32cd0a537e43bcaa90e7e233b7cae, type: 2}
   m_IsPrefabAsset: 0
