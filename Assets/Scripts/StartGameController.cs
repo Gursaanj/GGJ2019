@@ -24,6 +24,9 @@ public class StartGameController : MonoBehaviour {
         if(Input.anyKeyDown)
         {
             int index = startMainMenu ? 0 : 1;
+            if (startMainMenu) { 
+                Destroy(AudioManager.instance.gameObject);
+            }
             SceneManager.LoadScene(index);
         }
     }
