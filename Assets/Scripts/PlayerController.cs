@@ -188,7 +188,12 @@ public class PlayerController : BasePlayer {
     {
         characterRigidBody.velocity = Vector2.zero;
         GetComponent<Animator>().SetTrigger("Death");
-        
+        Invoke("onDeathAnimationComplete", 1f);
         isAlive = false;
+    }
+
+    void onDeathAnimationComplete()
+    {
+        TransitionManager.instance.OnPlayerDeath();
     }
 }

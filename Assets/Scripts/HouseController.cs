@@ -40,14 +40,11 @@ public class HouseController : BaseEnemyController
 
     private void FixedUpdate()
     {
-        if (isDead)
-            return;
-        
-        if (!skillActive)
+        if (!skillActive && !isDead)
         {
             float distance = Vector3.Distance(player.transform.position, transform.position);
 
-            int rand = Random.Range(0, Mathf.FloorToInt(1 / ccChance));
+            int rand = skillRandomizer(ccChance);
             if (rand == 0)
             {
                 skillActive = true;
@@ -58,7 +55,7 @@ public class HouseController : BaseEnemyController
             {
                 if (distance <= meleeDistance)
                 {
-                    int r = Random.Range(0, Mathf.FloorToInt(1 / meleeChance));
+                    int r = skillRandomizer(meleeChance);
                     if (r == 0)
                     {
                         skillActive = true;
@@ -68,7 +65,7 @@ public class HouseController : BaseEnemyController
                 }
                 else
                 {
-                    int r = Random.Range(0, Mathf.FloorToInt(1 / rangedChance));
+                    int r = skillRandomizer(rangedChance);
 
                     if (r == 0)
                     {
@@ -82,6 +79,11 @@ public class HouseController : BaseEnemyController
             Vector3 destination = new Vector3(player.transform.position.x, transform.position.y);
             transform.position = Vector3.MoveTowards(transform.position, destination, _speed * Time.fixedDeltaTime);
         }
+    }
+
+    int skillRandomizer(float chance)
+    {
+        return Random.Range(0, Mathf.FloorToInt(1 / chance));
     }
     
     private void OnTriggerStay2D(Collider2D other)

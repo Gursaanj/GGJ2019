@@ -23,8 +23,7 @@ public abstract class BaseEnemyController : BasePlayer
 
     protected override void updateHealthbar()
     {
-        Debug.Log((_health / _maxHealth));
-        healthBar.localScale = new Vector3((_health / _maxHealth), 1, 1);
+        healthBar.localScale = new Vector3(_health / _maxHealth, 1, 1);
     }
 
     protected override void onDeath()

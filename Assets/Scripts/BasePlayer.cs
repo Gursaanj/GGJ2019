@@ -10,7 +10,7 @@ public abstract class BasePlayer : MonoBehaviour {
 
     [SerializeField]
     protected float _health = 100;
-    protected float _maxHealth;
+    protected float _maxHealth = 1;
 
     protected Rigidbody2D  characterRigidBody;
 
@@ -22,6 +22,7 @@ public abstract class BasePlayer : MonoBehaviour {
 
     protected virtual void onStart()
     {
+        _health = Mathf.Max(1, _health);
         _maxHealth = _health;
     }
 

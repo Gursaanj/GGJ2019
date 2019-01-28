@@ -8,6 +8,8 @@ public class StartGameController : MonoBehaviour {
     [SerializeField]
     float speed;
     Vector3 destinationScale = new Vector3(0.75f, 0.75f, 1);
+    [SerializeField]
+    bool startMainMenu = false;
 
     bool isShrinking;
 
@@ -21,7 +23,8 @@ public class StartGameController : MonoBehaviour {
     {
         if(Input.anyKeyDown)
         {
-            SceneManager.LoadScene(1);
+            int index = startMainMenu ? 0 : 1;
+            SceneManager.LoadScene(index);
         }
     }
 

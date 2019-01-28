@@ -14,19 +14,23 @@ public class TransitionManager : MonoBehaviour {
 
     private GameObject player;
 
-	// Use this for initialization
-	void Start () {
+    public static TransitionManager instance = null;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    // Use this for initialization
+    void Start () {
         deadCharacter.onDeathDelegate += startTransition;
         StartCoroutine(fadeInScene());
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void Update()
+    public void OnPlayerDeath()
     {
-        if (!player.GetComponent<PlayerController>().IsAlive())
-        {
-            Restart.SetActive(true);
-        }
+        Restart.SetActive(true);
     }
 
     void startTransition()
