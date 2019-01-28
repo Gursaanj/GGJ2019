@@ -55,7 +55,7 @@ public class PlayerController : BasePlayer {
 
     private void FixedUpdate()
     {
-        if (isAlive) { 
+        if (isAlive) {
             Shoot();
             Melee();
             Dashing();
@@ -78,7 +78,7 @@ public class PlayerController : BasePlayer {
             GetComponent<SpriteRenderer>().flipX = last.x < 0;
 
             transform.Translate(last * dashMultiplier);
-            string animName = (last.y != 0) ? "DashVert" : "DashHori";  
+            string animName = (last.y != 0) ? "DashVert" : "DashHori";
             GetComponent<Animator>().SetTrigger(animName);
 
             _isDashOnCoolDown = true;
