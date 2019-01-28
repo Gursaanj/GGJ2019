@@ -9,12 +9,25 @@ public class TransitionManager : MonoBehaviour {
     [SerializeField]
     BaseEnemyController deadCharacter;
 
+    [SerializeField]
+    GameObject Restart;
+
+    private GameObject player;
+
 	// Use this for initialization
 	void Start () {
         deadCharacter.onDeathDelegate += startTransition;
         StartCoroutine(fadeInScene());
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
+    public void Update()
+    {
+        if (!player.GetComponent<PlayerController>().IsAlive())
+        {
+            Restart.SetActive(true);
+        }
+    }
 
     void startTransition()
     {

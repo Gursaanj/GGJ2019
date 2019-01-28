@@ -64,6 +64,11 @@ public class PlayerController : BasePlayer {
         }
     }
 
+    public bool IsAlive()
+    {
+        return isAlive;
+    }
+
     #region Dashing
     void Dashing()
     {
@@ -183,6 +188,7 @@ public class PlayerController : BasePlayer {
     {
         characterRigidBody.velocity = Vector2.zero;
         GetComponent<Animator>().SetTrigger("Death");
+        
         isAlive = false;
     }
 }
